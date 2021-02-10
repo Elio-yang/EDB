@@ -9,10 +9,10 @@
 #include <adlist.h>
 #include <db_log.h>
 #include <print_color.h>
+#include <unistd.h>
 int main(void)
 {
-#ifdef UNIX
-        #include <unistd.h>
+
         printf("This is a character control test!\n" );
         sleep(3);
         printf("[%2u]" CLEAR "CLEAR\n" NONE, __LINE__);
@@ -53,5 +53,4 @@ int main(void)
         printf("[%2u]" "\e[KClear from cursor downward\n" NONE, __LINE__);
 
         return 0 ;
-#endif
 }
