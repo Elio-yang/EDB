@@ -5,7 +5,7 @@
  * @date 2021/2/9
  */
 
-#include "db_log.h"
+#include <db_log.h>
 #include <errors.h>
 
 void print_log(const char *fileName, const int lineNum, const char *funcName, const char *fmt, ...)
@@ -25,11 +25,10 @@ void print_log(const char *fileName, const int lineNum, const char *funcName, co
         }
         memset(buffer_write, 0, sizeof(char) * 10240);
 
-        struct tm *tm_time = NULL;
-        time_t t_time = 0;
-        t_time = time(NULL);
-        tm_time = localtime(&t_time);
-        len += strftime(buffer_write, 32, "[%Y.%m.%d-%H:%M:%S]", tm_time);
+
+        time_t Time=time(NULL);
+        struct tm* t=localtime(&Time);
+        len += strftime(buffer_write, 32, "[%Y.%m.%d-%H:%M:%S]", t);
 
         fileName = strrchr(fileName, '\\') + 1;
         len += sprintf(buffer_write + len, "[File:%s]", fileName);
@@ -37,11 +36,11 @@ void print_log(const char *fileName, const int lineNum, const char *funcName, co
         len += sprintf(buffer_write + len, "[Function:%s] ", funcName);
         len += vsprintf(buffer_write + len, fmt, va);
         len += sprintf(buffer_write + len, "\n");
-#ifdef WIN32
+#ifdef _WIN32
 #include <direct.h>
         _getcwd(path, 260);
 #endif
-#ifdef UNIX
+#ifdef __linux__
 #include <unistd.h>
         getcwd(path,260);
 #endif
