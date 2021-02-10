@@ -5,7 +5,7 @@
  * @date 2021/2/9
  */
 
-#include <db_log.h>
+#include "db_log.h"
 #include <errors.h>
 
 void print_log(const char *fileName, const int lineNum, const char *funcName, const char *fmt, ...)
@@ -38,6 +38,18 @@ void print_log(const char *fileName, const int lineNum, const char *funcName, co
         len += sprintf(buffer_write + len, "\n");
 #ifdef _WIN32
 #include <direct.h>
+"dos.h"
+"io.h"
+"_mingw.h"
+"msvcrtver.h"
+"w32api.h"
+"sdkddkver.h"
+"features.h"
+"sys/types.h"
+"_mingw.h"
+"stddef.h"
+"stdint.h"
+
         _getcwd(path, 260);
 #endif
 #ifdef __linux__

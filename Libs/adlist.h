@@ -9,10 +9,10 @@
 #ifndef MY_DATABASE_ADLIST_H
 #define MY_DATABASE_ADLIST_H
 
-#include <defs.h>
-#include <mm.h>
-#include <string_db.h>
-#include <file_sys.h>
+#include "defs.h"
+#include "mm.h"
+#include "string_db.h"
+#include "file_sys.h"
 #include <db_log.h>
 #include <errors.h>
 /*link part*/

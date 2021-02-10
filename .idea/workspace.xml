@@ -1,74 +1,22 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
-    <generated>
-      <config projectName="MY_DataBase" targetName="db_lib" />
-      <config projectName="MY_DataBase" targetName="db_user" />
-      <config projectName="MY_DataBase" targetName="db_debug" />
-      <config projectName="MY_DataBase" targetName="database" />
-      <config projectName="MY_DataBase" targetName="db_ui" />
-      <config projectName="MY_DataBase" targetName="db_core" />
-    </generated>
-  </component>
-  <component name="CMakeSettings" AUTO_RELOAD="true">
+  <component name="CMakeSettings">
     <configurations>
       <configuration PROFILE_NAME="Debug" CONFIG_NAME="Debug" ENABLED="true" />
     </configurations>
   </component>
-  <component name="ChangeListManager">
-    <list default="true" id="9a2fad7e-7ca3-4d81-99ef-a1d7e185ab42" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Src/__main__.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/db_log.c" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/db_log.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/print_color.h" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/print_color.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/database_main.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_core.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_lib.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_ui.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_ui.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_user.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_user.a" afterDir="false" />
-    </list>
-    <option name="SHOW_DIALOG" value="false" />
-    <option name="HIGHLIGHT_CONFLICTS" value="true" />
-    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
-    <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ClangdSettings">
-    <option name="formatViaClangd" value="false" />
-  </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
-  <component name="FileTemplateManagerImpl">
-    <option name="RECENT_TEMPLATES">
-      <list>
-        <option value="CMakeLists.txt" />
-      </list>
-    </option>
-  </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
-  </component>
   <component name="MacroExpansionManager">
-    <option name="directoryName" value="710nv2bj" />
-  </component>
-  <component name="ProjectId" id="1mHxwH2C5EfhzYySOYGlmsjvfEt" />
-  <component name="ProjectViewState">
-    <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showLibraryContents" value="true" />
-    <option name="showMembers" value="true" />
-    <option name="sortByType" value="true" />
+    <option name="directoryName" value="zwz96r8e" />
   </component>
   <component name="PropertiesComponent">
-    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
-    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="cf.first.check.clang-format" value="false" />
-    <property name="nodejs_package_manager_path" value="npm" />
-    <property name="settings.editor.selected.configurable" value="reference.settingsdialog.IDE.editor.colors.C/C++" />
-  </component>
-  <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Users\ELIO\source\My_DataBase\Src" />
-    </key>
+    <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
   </component>
   <component name="RunManager" selected="CMake Application.database">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="database" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="database" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="database">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -112,38 +60,5 @@
       <item itemvalue="CMake Application.db_ui" />
       <item itemvalue="CMake Application.db_user" />
     </list>
-  </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
-  <component name="TaskManager">
-    <task active="true" id="Default" summary="Default task">
-      <changelist id="9a2fad7e-7ca3-4d81-99ef-a1d7e185ab42" name="Default Changelist" comment="" />
-      <created>1609164554815</created>
-      <option name="number" value="Default" />
-      <option name="presentableId" value="Default" />
-      <updated>1609164554815</updated>
-      <workItem from="1609164556069" duration="116000" />
-      <workItem from="1612757301576" duration="5680000" />
-      <workItem from="1612837821519" duration="13982000" />
-      <workItem from="1612869132737" duration="8362000" />
-      <workItem from="1612927216042" duration="1872000" />
-      <workItem from="1612929156798" duration="2428000" />
-      <workItem from="1612931836562" duration="2531000" />
-      <workItem from="1612935066785" duration="3983000" />
-    </task>
-    <servers />
-  </component>
-  <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="3" />
-  </component>
-  <component name="Vcs.Log.Tabs.Properties">
-    <option name="TAB_STATES">
-      <map>
-        <entry key="MAIN">
-          <value>
-            <State />
-          </value>
-        </entry>
-      </map>
-    </option>
   </component>
 </project>

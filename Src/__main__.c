@@ -6,3 +6,7 @@
  * @date 2021/2/9
  */
 
+int main()
+{
+        return 0;
+}
