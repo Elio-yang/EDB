@@ -1,1 +1,0 @@
-/usr/bin/cc    CMakeFiles/cb_test.dir/cb_test.c.o  -o cb_test 
