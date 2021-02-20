@@ -12,7 +12,7 @@ MESSAGE(SOURCE DIR:${PROJECT_SOURCE_DIR})
 MESSAGE(BINARY DIR:${PROJECT_BINARY_DIR})
 
 
-add_definitions(-std=c11)
+add_definitions(-std=gnu99)
 
 set(CMAKE_BUILD_TYPE "Debug")
 set(CMAKE_C_FLAGS_DEBUG "$ENV{CFLAGES} -O0 -Wall -g -ggdb")

@@ -1,0 +1,20 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/ELIO/source/DB/UI/help.c
+help.h
+/mnt/c/Users/ELIO/source/DB/UI/help.h
+
+/mnt/c/Users/ELIO/source/DB/UI/help.h
+
+/mnt/c/Users/ELIO/source/DB/UI/terminal.c
+terminal.h
+/mnt/c/Users/ELIO/source/DB/UI/terminal.h
+
+/mnt/c/Users/ELIO/source/DB/UI/terminal.h
+

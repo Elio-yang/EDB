@@ -36,27 +36,8 @@ void print_log(const char *fileName, const int lineNum, const char *funcName, co
         len += sprintf(buffer_write + len, "[Function:%s] ", funcName);
         len += vsprintf(buffer_write + len, fmt, va);
         len += sprintf(buffer_write + len, "\n");
-#ifdef _WIN32
-#include <direct.h>
-"dos.h"
-"io.h"
-"_mingw.h"
-"msvcrtver.h"
-"w32api.h"
-"sdkddkver.h"
-"features.h"
-"sys/types.h"
-"_mingw.h"
-"stddef.h"
-"stdint.h"
-
-        _getcwd(path, 260);
-#endif
-#ifdef __linux__
 #include <unistd.h>
         getcwd(path,260);
-#endif
-
         strcat(path, log_file_name);
         log_file = fopen(path, "r");
         if (log_file != NULL) {

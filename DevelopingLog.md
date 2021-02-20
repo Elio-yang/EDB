@@ -22,6 +22,13 @@ cmake ..
 
 3.开发了简单的log系统
 
-- 2021/02/10
+- 2021/02/19
+
+1. 宏 alignof
+
+2. 宏 assert
+
+3. 宏 array_size
+
 
 

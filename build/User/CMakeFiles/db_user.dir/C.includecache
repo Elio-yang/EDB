@@ -1,0 +1,14 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/mnt/c/Users/ELIO/source/DB/User/parser.c
+parser.h
+/mnt/c/Users/ELIO/source/DB/User/parser.h
+
+/mnt/c/Users/ELIO/source/DB/User/parser.h
+

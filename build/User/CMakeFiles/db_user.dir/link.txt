@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libdb_user.a  CMakeFiles/db_user.dir/parser.c.o
+/usr/bin/ranlib ../../lib/libdb_user.a

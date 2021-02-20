@@ -1,0 +1,1 @@
+/usr/bin/cc    CMakeFiles/alignof_test.dir/run.c.o CMakeFiles/alignof_test.dir/tap.c.o  -o alignof_test 

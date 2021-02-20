@@ -1,0 +1,30 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Debug/errors.h
+
+/mnt/c/Users/ELIO/source/DB/Debug/db_log.c
+db_log.h
+/mnt/c/Users/ELIO/source/DB/Debug/db_log.h
+errors.h
+-
+unistd.h
+-
+
+/mnt/c/Users/ELIO/source/DB/Debug/db_log.h
+string.h
+-
+stdarg.h
+-
+time.h
+-
+stdlib.h
+-
+stdio.h
+-
+

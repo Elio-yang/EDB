@@ -1,0 +1,21 @@
+一,注意:本项目为Linux平台项目,在Windows平台下可能编译失败
+二,编译器版本:gcc version 7.5.0 (Ubuntu 7.5.0-3ubuntu1~18.04)
+三,cmake版本:cmake version 3.10.2
+四,编译方法:
+    Linux下:
+    1.手动建立build文件夹,进入该目录下
+    2. cmake ..
+    3. make
+    4. 可执行文件放在bin目录下
+
+    或者使用build.sh脚本 使用方法 ./build.sh
+    注意: 如果在windows下利用wsl等编译，可能需要更改脚本文件的文件格式
+    1.vim打开.sh文件
+    2.输入:set ff
+    3.如果文件格式不是unix 则需要输入:set ff=unix
+
+    Windows下:
+    1. 手动建立build文件夹，进入该目录下
+    2. cmake .. -G “MinGW Makefiles”
+
+    3. make

@@ -1,0 +1,22 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+../Debug/build_assert.h
+
+../Libs/array_size.h
+build_assert.h
+-
+
+/mnt/c/Users/ELIO/source/DB/Src/__main__.c
+array_size.h
+-
+stdio.h
+-
+malloc.h
+-
+

@@ -1,0 +1,2 @@
+/usr/bin/ar qc ../../lib/libdb_core.a  CMakeFiles/db_core.dir/copyright.c.o CMakeFiles/db_core.dir/database.c.o
+/usr/bin/ranlib ../../lib/libdb_core.a
