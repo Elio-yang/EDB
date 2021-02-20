@@ -9,6 +9,8 @@
 #ifndef MY_DATABASE_DEFS_H
 #define MY_DATABASE_DEFS_H
 
+#include <stddef.h>
+
 #define __always_inline inline __attribute__((always_inline))
 #define __noinline __attribute__((noinline))
 #define __noreturn __attribute__((noreturn))

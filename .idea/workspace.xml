@@ -2,12 +2,7 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="MY_DataBase" targetName="db_lib" />
-      <config projectName="MY_DataBase" targetName="db_user" />
-      <config projectName="MY_DataBase" targetName="db_debug" />
-      <config projectName="MY_DataBase" targetName="database" />
-      <config projectName="MY_DataBase" targetName="db_ui" />
-      <config projectName="MY_DataBase" targetName="db_core" />
+      <config projectName="CB_test" targetName="cb_test" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -17,25 +12,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Debug/build_assert.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libs/align.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libs/array_size.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libs/bsearch.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libs/bsearch.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Libs/typesafe_cb.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/db_log.c" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/db_log.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/DevelopingLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/DevelopingLog.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README" beforeDir="false" afterPath="$PROJECT_DIR$/README" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/__main__.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/__main__.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/database" beforeDir="false" afterPath="$PROJECT_DIR$/bin/database" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.sh" beforeDir="false" afterPath="$PROJECT_DIR$/build.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/clean.sh" beforeDir="false" afterPath="$PROJECT_DIR$/clean.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_core.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_lib.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_ui.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_ui.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_user.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_user.a" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -71,11 +48,17 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ELIO\source\DB\Tests" />
       <recent name="C:\Users\ELIO\source\DB" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.database">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+  <component name="RunManager" selected="CMake Application.cb_test">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="cb_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="cb_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="cb_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -116,6 +99,7 @@
       </method>
     </configuration>
     <list>
+      <item itemvalue="CMake Application.cb_test" />
       <item itemvalue="CMake Application.db_core" />
       <item itemvalue="CMake Application.db_debug" />
       <item itemvalue="CMake Application.db_lib" />
@@ -138,6 +122,7 @@
       <workItem from="1613573203592" duration="1336000" />
       <workItem from="1613734157173" duration="498000" />
       <workItem from="1613743684640" duration="6763000" />
+      <workItem from="1613785984902" duration="8555000" />
     </task>
     <servers />
   </component>
@@ -155,5 +140,22 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Tests/cb_test/cb_test.c</url>
+          <line>84</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+    <watches-manager>
+      <configuration name="CMakeRunConfiguration">
+        <watch expression="callbacks" language="ObjectiveC" />
+        <watch expression="&amp;run" language="ObjectiveC" />
+      </configuration>
+    </watches-manager>
   </component>
 </project>

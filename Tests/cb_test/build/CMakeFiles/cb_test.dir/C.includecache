@@ -1,0 +1,24 @@
+#IncludeRegexLine: ^[ 	]*[#%][ 	]*(include|import)[ 	]*[<"]([^">]+)([">])
+
+#IncludeRegexScan: ^.*$
+
+#IncludeRegexComplain: ^$
+
+#IncludeRegexTransform: 
+
+/home/elio/ProjectDB/Tests/cb_test/cb_test.c
+typesafe_cb.h
+/home/elio/ProjectDB/Tests/cb_test/typesafe_cb.h
+stdio.h
+-
+stdlib.h
+-
+sys/types.h
+-
+
+/home/elio/ProjectDB/Tests/cb_test/config.h
+
+/home/elio/ProjectDB/Tests/cb_test/typesafe_cb.h
+config.h
+/home/elio/ProjectDB/Tests/cb_test/config.h
+

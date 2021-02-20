@@ -1,0 +1,3 @@
+/home/elio/ProjectDB/Tests/cb_test/build/CMakeFiles/rebuild_cache.dir
+/home/elio/ProjectDB/Tests/cb_test/build/CMakeFiles/edit_cache.dir
+/home/elio/ProjectDB/Tests/cb_test/build/CMakeFiles/cb_test.dir
