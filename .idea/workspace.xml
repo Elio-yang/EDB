@@ -2,7 +2,12 @@
 <project version="4">
   <component name="CMakeRunConfigurationManager" shouldGenerate="true" shouldDeleteObsolete="true">
     <generated>
-      <config projectName="CB_test" targetName="cb_test" />
+      <config projectName="MY_DataBase" targetName="db_lib" />
+      <config projectName="MY_DataBase" targetName="db_debug" />
+      <config projectName="MY_DataBase" targetName="db_user" />
+      <config projectName="MY_DataBase" targetName="database" />
+      <config projectName="MY_DataBase" targetName="db_ui" />
+      <config projectName="MY_DataBase" targetName="db_core" />
     </generated>
   </component>
   <component name="CMakeSettings" AUTO_RELOAD="true">
@@ -12,7 +17,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/CMakeLists.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/bsearch.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/bsearch_test.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/config.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/typesafe_cb.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libs/bsearch.c" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/bsearch.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libs/bsearch.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/bsearch.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libs/defs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/defs.h" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,7 +35,13 @@
   <component name="ClangdSettings">
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CMakeLists.txt" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
@@ -42,11 +61,16 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tests/bsearch_test" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="settings.editor.splitter.proportion" value="0.23868313" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ELIO\source\DB\Tests\bsearch_test" />
+      <recent name="C:\Users\ELIO\source\DB\Libs" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ELIO\source\DB\Tests" />
       <recent name="C:\Users\ELIO\source\DB" />
@@ -123,6 +147,7 @@
       <workItem from="1613734157173" duration="498000" />
       <workItem from="1613743684640" duration="6763000" />
       <workItem from="1613785984902" duration="8555000" />
+      <workItem from="1613807203476" duration="5639000" />
     </task>
     <servers />
   </component>

@@ -10,6 +10,8 @@
 #define MY_DATABASE_DEFS_H
 
 #include <stddef.h>
+#include <limits.h>
+#include <stdint.h>
 
 #define __always_inline inline __attribute__((always_inline))
 #define __noinline __attribute__((noinline))
@@ -20,7 +22,6 @@ typedef int bool;
 
 #define nullptr (void*)0
 /* Explicitly-sized versions of integer types */
-typedef char int8_t;
 typedef unsigned char uint8_t;
 typedef short int16_t;
 typedef unsigned short uint16_t;

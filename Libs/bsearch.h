@@ -6,9 +6,8 @@
 
 #ifndef MY_DATABASE_BSEARCH_H
 #define MY_DATABASE_BSEARCH_H
-
 #include <defs.h>
-typedef int (*bsearch_cmp)(const void *,const void *,void *);
+typedef int (*bsearch_cmp_t)(const void *, const void *);
 
 /*
  * bsearch - search an array of elements
@@ -17,10 +16,12 @@ typedef int (*bsearch_cmp)(const void *,const void *,void *);
  * @num: number of elements
  * @cmp: pointer to comparison function
  */
-#define bsearch(key,base,num,cmp,ctx) \
-
-
-
-void * _bsearch(const void *key,const void *base,size_t nmemb,size_t size,
-                bsearch_cmp cmp, void *ctx);
+#define bsearch(key, base, num, cmp)				\
+	((__typeof__(*(base))*)(_bsearch((key), (base), (num), sizeof(*(base)), \
+		typesafe_cb_cast(bsearch_cmp_t,				\
+				 int (*)(const __typeof__(*(key)) *,	\
+					 const __typeof__(*(base)) *),	\
+				 (cmp)))))
+void *_bsearch(const void *__key, const void *__base, size_t __nmemb, size_t __size,
+               bsearch_cmp_t __cmp);
 #endif //MY_DATABASE_BSEARCH_H

@@ -1,0 +1,3 @@
+C:/Users/ELIO/source/DB/Tests/bsearch_test/build/CMakeFiles/bsearch_test.dir
+C:/Users/ELIO/source/DB/Tests/bsearch_test/build/CMakeFiles/edit_cache.dir
+C:/Users/ELIO/source/DB/Tests/bsearch_test/build/CMakeFiles/rebuild_cache.dir
