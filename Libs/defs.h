@@ -13,12 +13,17 @@
 #include <limits.h>
 #include <stdint.h>
 
+#define uninitialized 0x3f3f3f3f
+
+
 #define __always_inline inline __attribute__((always_inline))
 #define __noinline __attribute__((noinline))
 #define __noreturn __attribute__((noreturn))
 
+#if !defined(bool)
 /* Represents true-or-false */
 typedef int bool;
+#endif
 
 #define nullptr (void*)0
 /* Explicitly-sized versions of integer types */

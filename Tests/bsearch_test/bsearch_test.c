@@ -5,7 +5,7 @@
  */
 
 
-#include <bsearch.h>
+#include "bsearch.h"
 #include <limits.h>
 static int test_cmp(const int *key, const int *elt)
 {

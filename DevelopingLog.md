@@ -18,7 +18,7 @@ mingw32-make
 ```cmake
 cmake ..
 ```
-会调用MSVC编译器，生成符合VisualStudio的解决方案。
+会调用MSVC编译器，生成符合VisualStudio格式的解决方案(.sln)。
 
 3.开发了简单的log系统
 
@@ -30,5 +30,9 @@ cmake ..
 
 3. 宏 array_size
 
+
+-2021/2/24
+
+1.<K,V> pair 字典基于avl api
 
 

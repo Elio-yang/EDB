@@ -1,29 +1,9 @@
-/*
- * Copyright (C) 2010 Joseph Adams <joeyadams3.14159@gmail.com>
- * 
- * Permission is hereby granted, free of charge, to any person obtaining a copy
- * of this software and associated documentation files (the "Software"), to deal
- * in the Software without restriction, including without limitation the rights
- * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
- * copies of the Software, and to permit persons to whom the Software is
- * furnished to do so, subject to the following conditions:
- * 
- * The above copyright notice and this permission notice shall be included in
- * all copies or substantial portions of the Software.
- * 
- * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
- * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
- * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
- * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
- * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
- * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
- * THE SOFTWARE.
- */
-
 #include "avl.h"
 
 #include <assert.h>
 #include <stdlib.h>
+#include <stdio.h>
+
 
 static AvlNode *mkNode(const void *key, const void *value);
 static void freeNode(AvlNode *node);
@@ -31,7 +11,7 @@ static void freeNode(AvlNode *node);
 static AvlNode *lookup(const AVL *avl, AvlNode *node, const void *key);
 
 static bool insert(AVL *avl, AvlNode **p, const void *key, const void *value);
-static bool remove(AVL *avl, AvlNode **p, const void *key, AvlNode **ret);
+static bool Remove(AVL *avl, AvlNode **p, const void *key, AvlNode **ret);
 static bool removeExtremum(AvlNode **p, int side, AvlNode **ret);
 
 static int sway(AvlNode **p, int sway);
@@ -62,7 +42,7 @@ static int sign(int cmp)
 	return 1;
 }
 
-AVL *avl_new(total_order_noctx_cb compare)
+AVL *avl_new(cmp_t compare)
 {
 	AVL *avl = malloc(sizeof(*avl));
 	
@@ -106,8 +86,8 @@ bool avl_insert(AVL *avl, const void *key, const void *value)
 bool avl_remove(AVL *avl, const void *key)
 {
 	AvlNode *node = NULL;
-	
-	remove(avl, &avl->root, key, &node);
+
+        Remove(avl, &avl->root, key, &node);
 	
 	if (node == NULL) {
 		return false;
@@ -192,7 +172,7 @@ static bool insert(AVL *avl, AvlNode **p, const void *key, const void *value)
  *
  * Return true if the subtree's height decreased.
  */
-static bool remove(AVL *avl, AvlNode **p, const void *key, AvlNode **ret)
+static bool Remove(AVL *avl, AvlNode **p, const void *key, AvlNode **ret)
 {
 	if (*p == NULL) {
 		return false;
@@ -237,7 +217,7 @@ static bool remove(AVL *avl, AvlNode **p, const void *key, AvlNode **ret)
 			return true;
 			
 		} else {
-			if (!remove(avl, &node->lr[side(cmp)], key, ret))
+			if (!Remove(avl, &node->lr[side(cmp)], key, ret))
 				return false;
 			
 			/* If tree's balance became 0, it means the tree's height shrank due to removal. */
@@ -445,4 +425,21 @@ void avl_iter_next(AvlIter *iter)
 	iter->node  = node;
 	iter->key   = (void*) node->key;
 	iter->value = (void*) node->value;
+}
+
+void _inorder(struct AvlNode *node)
+{
+        if (node) {
+                _inorder(node->lr[0]);
+                printf("|\tkey:%-4d\t|\tvalue:%10lld\n",
+                       *((int *) node->key), *((long long *) node->value));
+                _inorder(node->lr[1]);
+        }
+}
+
+void inorder(AVL *avl_tree)
+{
+        if (avl_tree->root) {
+                _inorder(avl_tree->root);
+        }
 }

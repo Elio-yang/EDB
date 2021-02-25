@@ -17,15 +17,36 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/CMakeLists.txt" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/bsearch.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/bsearch_test.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/config.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Tests/bsearch_test/typesafe_cb.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Libs/mathtool.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libs/bsearch.c" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/bsearch.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libs/bsearch.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/bsearch.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/db_log.c" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/db_log.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/db_log.h" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/db_log.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/debug.h" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/debug.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/errors.h" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/errors.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevelopingLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/DevelopingLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libs/avl_dic.c" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/avl_dic.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libs/avl_dic.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/avl_dic.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libs/defs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/defs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/__main__.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/__main__.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/avl_test/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/avl_test/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/avl_test/avl.c" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/avl_test/avl.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/avl_test/avl.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/avl_test/avl.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/avl_test/avl_test.c" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/avl_test/avl_test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/bsearch_test/bsearch.h" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/bsearch_test/bsearch.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/bsearch_test/bsearch_test.c" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/bsearch_test/bsearch_test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/database.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/database.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" afterPath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/build.make" beforeDir="false" afterPath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/build.make" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libdb_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_core.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libdb_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_lib.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libdb_ui.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_ui.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libdb_user.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_user.a" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,8 +54,10 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="ClangdSettings">
+    <option name="clangTidyViaClangd" value="false" />
     <option name="formatViaClangd" value="false" />
   </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -61,13 +84,14 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tests/bsearch_test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tests/avl_test" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="settings.editor.splitter.proportion" value="0.23868313" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\ELIO\source\DB\Tests\avl_test" />
       <recent name="C:\Users\ELIO\source\DB\Tests\bsearch_test" />
       <recent name="C:\Users\ELIO\source\DB\Libs" />
     </key>
@@ -76,10 +100,10 @@
       <recent name="C:\Users\ELIO\source\DB" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.cb_test">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+  <component name="RunManager" selected="CMake Application.database">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="cb_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="cb_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="cb_test">
@@ -147,7 +171,10 @@
       <workItem from="1613734157173" duration="498000" />
       <workItem from="1613743684640" duration="6763000" />
       <workItem from="1613785984902" duration="8555000" />
-      <workItem from="1613807203476" duration="5639000" />
+      <workItem from="1613807203476" duration="5863000" />
+      <workItem from="1614155083982" duration="628000" />
+      <workItem from="1614163568792" duration="12040000" />
+      <workItem from="1614228557342" duration="24119000" />
     </task>
     <servers />
   </component>
@@ -174,13 +201,17 @@
           <line>84</line>
           <option name="timeStamp" value="3" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Tests/avl_test/avl_test.c</url>
+          <line>31</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
+          <url>file://$PROJECT_DIR$/Src/__main__.c</url>
+          <line>32</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-    <watches-manager>
-      <configuration name="CMakeRunConfiguration">
-        <watch expression="callbacks" language="ObjectiveC" />
-        <watch expression="&amp;run" language="ObjectiveC" />
-      </configuration>
-    </watches-manager>
   </component>
 </project>

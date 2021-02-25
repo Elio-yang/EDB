@@ -7,6 +7,9 @@
 
 #include "db_log.h"
 #include <errors.h>
+#include <defs.h>
+
+#define __NO_MINGW_LFS
 
 void print_log(const char *fileName, const int lineNum, const char *funcName, const char *fmt, ...)
 {
@@ -60,4 +63,9 @@ void print_log(const char *fileName, const int lineNum, const char *funcName, co
                 free(buffer_write);
                 buffer_write = NULL;
         }
+}
+
+__always_inline void print_log_with(error_t error)
+{
+        print_log(get_file,get_line,get_func,error);
 }
