@@ -20,9 +20,11 @@ int main()
 {
         AVL *avl_tree=avl_new(cmp_test);
         int test_data[]={
-                1,2,3,4,5,6,7,8,9,23,
-                34,67,24,55,87,99,56,
-                12,98,33,25,62,78,92
+                1, 2, 3, 4, 5, 6, 7, 8, 9, 23,
+                34, 67, 24, 55, 87, 99, 56,
+                12, 98, 33, 25, 62, 78, 92,
+                10, 11, 13, 14, 15, 16, 17,
+                5, 6, 7, 1009, 567, 234, 666
         };
         size_t test_size= sizeof(test_data)/sizeof(test_data[0]);
         long long value[test_size];

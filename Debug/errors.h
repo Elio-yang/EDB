@@ -10,6 +10,7 @@
 #define MEMORY_ALLOCATED_ERROR  "Allocation failed!"
 #define FILE_OPEN_ERROR "File open failed!"
 #define NULLPTR         "Null pointer variable!"
+#define NOTARGET        "Object doesn't exists!"
 
 
 #endif //MY_DATABASE_ERRORS_H

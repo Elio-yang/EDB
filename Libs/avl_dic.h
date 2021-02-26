@@ -40,12 +40,13 @@ typedef struct AVL {
 } avl;
 /* structure of father & son */
 typedef struct fs {
-
         avl_node *father;
         avl_node *this;
 } fs;
 
-__always_inline avl *avl_init(cmp_t cmp);
+
+
+avl *avl_init(cmp_t cmp);
 
 __always_inline avl_node *new_node(const void *key, const void *value);
 
@@ -54,12 +55,18 @@ void free_avl(avl *avl_tree);
 __always_inline fs *search(avl_node *node, const void *key, cmp_t cmp_f);
 
 fs *avl_search(const avl *avl_tree, const void *key);
+
+avl_node *search_key(const avl *avl_tree,const void *key);
+
 #define avl_member_exist(avl, key) (!!avl_lookup_node(avl, key))
+
 __always_inline size_t avl_count(const avl *avl_tree);
 
 size_t get_update_height(avl_node *node);
 
 __always_inline size_t get_height(avl_node *node);
+
+int balance_judge_order(avl_node *node);
 
 bool is_balanced(avl *avl_tree);
 
@@ -70,9 +77,12 @@ bool avl_remove(avl *avl_tree, const void *key);
 bool avl_check_invariants(avl *avl_tree);
 
 
+/* traversal */
+
 
 /*test part*/
 void _inorder(avl_node *node);
+
 void inorder(avl *avl_tree);
 
 

@@ -83,28 +83,34 @@ __always_inline fs *search(avl_node *node, const void *key, cmp_t cmp_f)
         }
 
         int cmp;
-        avl_node *tmp = nullptr;
+        avl_node *tmp=nullptr;
         for (this_father = node;;) {
                 cmp = cmp_f(key, this_father->key);
                 /* at begin cmp must not be zero */
                 if (cmp < 0) {
                         tmp = this_father->lc;
+
                 } else if (cmp > 0) {
                         tmp = this_father->rc;
                 }
 
-                if (tmp == nullptr || cmp == 0) {
+                if (tmp == nullptr || cmp_f(key, tmp->key) == 0) {
                         recd->father = this_father;
                         recd->this = tmp;
                         return recd;
                 }
-                this_father = tmp;
+                this_father=tmp;
         }
 }
 
 fs *avl_search(const avl *avl_tree, const void *key)
 {
         return search(avl_tree->root,key,avl_tree->cmp);
+}
+
+avl_node *search_key(const avl *avl_tree,const void *key)
+{
+        return search(avl_tree->root,key,avl_tree->cmp)->this;
 }
 
 __always_inline size_t avl_count(const avl *avl_tree)
@@ -133,17 +139,33 @@ __always_inline size_t get_height(avl_node *node)
         return node->h;
 }
 
-bool balance_judge_order(avl_node *node)
+
+/* right height - left height */
+__always_inline int get_bf(avl_node *node)
 {
-        if (node) {
-                if (balance_judge_order(node->lc) && balance_judge_order(node->rc)) {
-                        return true;
-                }
-                if (!(-2 < node->balance && node->balance < 2)) {
-                        return false;
-                }
+        return node->rh - node->lh;
+}
+
+
+int balance_judge_order(avl_node *node)
+{
+        if(node==nullptr){
+                return 0;
         }
-        return true;
+        int left=balance_judge_order(node->lc);
+        if(left==-1){
+                return -1;
+        }
+        int right=balance_judge_order(node->rc);
+        if(right==-1){
+                return -1;
+        }
+
+        if(abs(left-right)>1){
+                return -1;
+        }else {
+                return 1+max(left,right);
+        }
 }
 
 bool is_balanced(avl *avl_tree)
@@ -162,11 +184,6 @@ __always_inline bool balanced_at(avl_node *node)
         return false;
 }
 
-/* right height - left height */
-__always_inline int get_bf(avl_node *node)
-{
-        return node->rh - node->lh;
-}
 
 __always_inline void update_height(avl_node *node)
 {
@@ -302,31 +319,10 @@ void lr_rotate(avl *avl_tree, avl_node *alpha, avl_node *alpha_l, avl_node *beta
         }
 }
 
-void avl_insert(avl *avl_tree, const void *key, const void *value)
+
+void rotate(avl *avl_tree,avl_node *alpha,avl_node *beta)
 {
-        fs *tar = search(avl_tree->root, key, avl_tree->cmp);
-        if (tar->this) {
-                return;
-        }
-        avl_node *beta = new_node(key, value);
-        /* update lh&rh&h&balance of node */
-        get_update_height(beta);
-        beta->father = tar->father;
-        if (tar->father) {
-                int cmp = avl_tree->cmp(beta->key, tar->father->key);
-                if (cmp < 0) {
-                        tar->father->lc = beta;
-                } else if (cmp > 0) {
-                        tar->father->rc = beta;
-                }
-        } else {
-                /*root node*/
-                avl_tree->root = beta;
-        }
-        avl_tree->count++;
-        get_update_height(avl_tree->root);
-        /* update h and lh & rh from node->father */
-        for (avl_node *alpha = beta->father; alpha; alpha = alpha->father) {
+        for (alpha = beta->father; alpha; alpha = alpha->father) {
                 /* balance is broken at tmp by the insertion of node
                  * do rotation here
                  *
@@ -334,6 +330,7 @@ void avl_insert(avl *avl_tree, const void *key, const void *value)
                  * beta-node:  node
                  */
                 if (!balanced_at(alpha)) {
+
                         int bf = get_bf(alpha);
                         switch (bf) {
                                 case 2: {
@@ -493,19 +490,204 @@ void avl_insert(avl *avl_tree, const void *key, const void *value)
                         update_height_above(alpha);
                 }
         }
+}
+
+void avl_insert(avl *avl_tree, const void *key, const void *value)
+{
+        fs *tar = search(avl_tree->root, key, avl_tree->cmp);
+        if (tar->this) {
+                return;
+        }
+        avl_node *beta = new_node(key, value);
+        /* update lh&rh&h&balance of node */
+        get_update_height(beta);
+        beta->father = tar->father;
+        if (tar->father) {
+                int cmp = avl_tree->cmp(beta->key, tar->father->key);
+                if (cmp < 0) {
+                        tar->father->lc = beta;
+                } else if (cmp > 0) {
+                        tar->father->rc = beta;
+                }
+        } else {
+                /*root node*/
+                avl_tree->root = beta;
+        }
+        avl_tree->count++;
+        get_update_height(avl_tree->root);
+        /* update h and lh & rh from node->father */
+        avl_node *alpha=beta->father;
+        rotate(avl_tree,alpha,beta);
+
         free(tar);
 }
 
+/* min node of avl_tree with the *root* */
+fs *find_min_node(avl_node *root)
+{
+        fs *tar=malloc(sizeof(*tar));
+        if (tar==nullptr){
+                print_log_with(MEMORY_ALLOCATED_ERROR);
+        }
+        build_assert(tar!=nullptr);
 
-bool avl_remove(avl *avl_tree, const void *key);
+        avl_node *t;
+        for(t=root;t->lc;t=t->lc);
+        tar->this=t;
+        tar->father=t->father;
+        return tar;
+}
 
-bool avl_check_invariants(avl *avl_tree);
+bool avl_remove(avl *avl_tree, const void *key)
+{
+
+        fs *ans=avl_search(avl_tree,key);
+        if(ans->this==nullptr){
+                print_log_with(NOTARGET);
+                return false;
+        }
+        //build_assert(ans->this!=nullptr);
+        avl_node *this_father=ans->father;
+        avl_node *this=ans->this;
+        if(this->rc!=nullptr && this->lc!=nullptr){
+                // TODO This branch tested OK! perhaps...
+                /* has 2 child */
+                fs *t=find_min_node(this->rc);
+                avl_node *min_node=t->this;
+                avl_node *min_fa=t->father;
+                if(min_node->rc==nullptr){
+                        /* copy key & value */
+                        memcpy(this,min_node, 2*sizeof(const void*));
+                        avl_node *alpha=min_node->father;
+                        min_node->father=nullptr;
+
+
+                        if(min_fa->lc==min_node){
+                                min_fa->lc=nullptr;
+                        }
+                        else if(min_fa->rc==min_node){
+                                min_fa->rc=nullptr;
+                        }
+
+                        free(min_node);
+                        get_update_height(avl_tree->root);
+                        avl_tree->count--;
+                        int rh=alpha->rh;
+                        switch (rh) {
+                                case 0:{
+                                        avl_node *tmp;
+                                        for(tmp=alpha->father;tmp;tmp=tmp->father){
+                                                if(!balanced_at(tmp)){
+                                                        break;
+                                                }
+                                        }
+                                        rotate(avl_tree,tmp,alpha);
+                                        break;
+                                }
+                                case 2:{
+
+                                        avl_node *ch=alpha->rc->rc;
+                                        if(ch!=nullptr){
+                                                rr_rotate(avl_tree,alpha,alpha->rc);
+                                        }else{
+                                                rl_rotate(avl_tree,alpha,alpha->rc,alpha->rc->lc);
+                                        }
+                                        break;
+                                }
+
+                        }
+                }
+                else {
+                        avl_node *alpha=min_node->father;
+                        avl_node *beta= min_node->rc;
+                        min_fa->lc=min_node->rc;
+                        min_node->rc->father=min_fa;
+                        min_node->father=nullptr;
+                        min_node->rc=nullptr;
+                        memcpy(this,min_node,2* sizeof(const void*));
+                        free(min_node);
+                        get_update_height(avl_tree->root);
+                        avl_tree->count--;
+                        rotate(avl_tree,alpha,beta);
+                }
+        }
+        else if(this->lc!=nullptr && this->rc==nullptr){
+                /* has only lc */
+                avl_node *lc=this->lc;
+                lc->father=this_father;
+                if(this_father==nullptr){
+                        avl_tree->root=lc;
+                        goto free2;
+                }
+                int cmp=avl_tree->cmp(lc->key,this_father->key);
+                if(cmp<0){
+                        this_father->lc=lc;
+                }
+                else if(cmp>0){
+                        this_father->rc=lc;
+                }
+                free2:
+                this->father=nullptr;
+                this->lc=nullptr;
+                free(this);
+                --avl_tree->count;
+                get_update_height(avl_tree->root);
+                avl_node *alpha=this_father->father;
+                avl_node *beta = this_father;
+                rotate(avl_tree,alpha,beta);
+        }
+        else if(this->lc==nullptr && this->rc!=nullptr){
+                /* has only rc */
+                avl_node *rc=this->rc;
+                if(this_father==nullptr){
+                        avl_tree->root=rc;
+                        goto free3;
+                }
+                int cmp=avl_tree->cmp(rc->key,this_father->key);
+                if(cmp<0){
+                        this_father->lc=rc;
+                }
+                else if(cmp>0){
+                        this_father->rc=rc;
+                }
+                free3:
+                this->father=nullptr;
+                this->rc=nullptr;
+                free(this);
+                --avl_tree->count;
+                get_update_height(avl_tree->root);
+                avl_node *alpha=this_father->father;
+                avl_node *beta = this_father;
+                rotate(avl_tree,alpha,beta);
+        }
+        else if( this->rc==nullptr && this->rc == nullptr){
+                /* has no child */
+                this->father=nullptr;
+                if(this_father==nullptr){
+                        goto free4;
+                }
+                int cmp=avl_tree->cmp(this->key,this_father->key);
+                if(cmp<0){
+                        this_father->lc=nullptr;
+                }
+                else if(cmp>0){
+                        this_father->rc=nullptr;
+                }
+                get_update_height(avl_tree->root);
+                avl_node *alpha=this_father->father;
+                avl_node *beta = this_father;
+                rotate(avl_tree,alpha,beta);
+                --avl_tree->count;
+                free4:
+                free(this);
+        }
+}
 
 void _inorder(avl_node *node)
 {
         if (node) {
                 _inorder(node->lc);
-                printf("|\tkey:%-4d\t|\tvalue:%10lld\n",
+                printf("|\tkey:%-4d\t|\tvalue:%10lld\t|\n",
                        *((int *) node->key), *((long long *) node->value));
                 _inorder(node->rc);
         }
@@ -513,7 +695,9 @@ void _inorder(avl_node *node)
 
 void inorder(avl *avl_tree)
 {
+        printf("+-------------------------------------------------------+\n");
         if (avl_tree->root) {
                 _inorder(avl_tree->root);
         }
+        printf("+-------------------------------------------------------+\n");
 }

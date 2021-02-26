@@ -18,9 +18,11 @@
   <component name="ChangeListManager">
     <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/errors.h" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/errors.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libs/avl_dic.c" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/avl_dic.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libs/avl_dic.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/avl_dic.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/__main__.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/__main__.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/avl_test/avl_test.c" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/avl_test/avl_test.c" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/database.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/database.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/libdb_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_lib.a" afterDir="false" />
     </list>
@@ -77,6 +79,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.database">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="cb_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="cb_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="cb_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -112,11 +119,6 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <list>
       <item itemvalue="CMake Application.cb_test" />
       <item itemvalue="CMake Application.db_core" />
@@ -146,7 +148,8 @@
       <workItem from="1614155083982" duration="628000" />
       <workItem from="1614163568792" duration="12040000" />
       <workItem from="1614228557342" duration="33336000" />
-      <workItem from="1614266577273" duration="1933000" />
+      <workItem from="1614266577273" duration="2864000" />
+      <workItem from="1614303737679" duration="13044000" />
     </task>
     <servers />
   </component>
@@ -175,24 +178,21 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Tests/avl_test/avl_test.c</url>
-          <line>31</line>
+          <line>33</line>
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Src/__main__.c</url>
-          <line>37</line>
-          <option name="timeStamp" value="10" />
+          <url>file://$PROJECT_DIR$/Libs/avl_dic.c</url>
+          <line>543</line>
+          <option name="timeStamp" value="20" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="test_data[i]" language="ObjectiveC" />
-        <watch expression="*(int*)(tar-&gt;father-&gt;key)" language="ObjectiveC" />
-        <watch expression="*(int*)(0x61fed0)" language="ObjectiveC" />
-        <watch expression="*(int*)alpha-&gt;key" language="ObjectiveC" />
-        <watch expression="*(int*)alpha_r-&gt;key" language="ObjectiveC" />
-        <watch expression="*(int*)beta_stay-&gt;key" language="ObjectiveC" />
+        <watch expression="*(int*)key" language="ObjectiveC" />
+        <watch expression="*(int*)this_father-&gt;key" language="ObjectiveC" />
+        <watch expression="*(int*)tmp-&gt;key" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
