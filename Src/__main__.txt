@@ -35,11 +35,16 @@ int main()
                 inorder(avl_tree);
         }
 
-//        avl_remove(avl_tree,&test_data[1]);
-//        inorder(avl_tree);
-//        avl_remove(avl_tree,&test_data[5]);
-//        inorder(avl_tree);
-        avl_remove(avl_tree,&test_data[7]);
+        avl_remove(avl_tree,&test_data[0]);
         inorder(avl_tree);
+        avl_remove(avl_tree,&test_data[1]);
+        inorder(avl_tree);
+        avl_remove(avl_tree,&test_data[4]);
+        inorder(avl_tree);
+
+        avl_remove(avl_tree,&test_data[3]);
+        inorder(avl_tree);
+
         return 0;
+
 }

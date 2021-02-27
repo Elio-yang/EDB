@@ -83,7 +83,7 @@ __always_inline fs *search(avl_node *node, const void *key, cmp_t cmp_f)
         }
 
         int cmp;
-        avl_node *tmp=nullptr;
+        avl_node *tmp = nullptr;
         for (this_father = node;;) {
                 cmp = cmp_f(key, this_father->key);
                 /* at begin cmp must not be zero */
@@ -99,18 +99,18 @@ __always_inline fs *search(avl_node *node, const void *key, cmp_t cmp_f)
                         recd->this = tmp;
                         return recd;
                 }
-                this_father=tmp;
+                this_father = tmp;
         }
 }
 
 fs *avl_search(const avl *avl_tree, const void *key)
 {
-        return search(avl_tree->root,key,avl_tree->cmp);
+        return search(avl_tree->root, key, avl_tree->cmp);
 }
 
-avl_node *search_key(const avl *avl_tree,const void *key)
+avl_node *search_key(const avl *avl_tree, const void *key)
 {
-        return search(avl_tree->root,key,avl_tree->cmp)->this;
+        return search(avl_tree->root, key, avl_tree->cmp)->this;
 }
 
 __always_inline size_t avl_count(const avl *avl_tree)
@@ -149,22 +149,22 @@ __always_inline int get_bf(avl_node *node)
 
 int balance_judge_order(avl_node *node)
 {
-        if(node==nullptr){
+        if (node == nullptr) {
                 return 0;
         }
-        int left=balance_judge_order(node->lc);
-        if(left==-1){
+        int left = balance_judge_order(node->lc);
+        if (left == -1) {
                 return -1;
         }
-        int right=balance_judge_order(node->rc);
-        if(right==-1){
+        int right = balance_judge_order(node->rc);
+        if (right == -1) {
                 return -1;
         }
 
-        if(abs(left-right)>1){
+        if (abs(left - right) > 1) {
                 return -1;
-        }else {
-                return 1+max(left,right);
+        } else {
+                return 1 + max(left, right);
         }
 }
 
@@ -320,7 +320,7 @@ void lr_rotate(avl *avl_tree, avl_node *alpha, avl_node *alpha_l, avl_node *beta
 }
 
 
-void rotate(avl *avl_tree,avl_node *alpha,avl_node *beta)
+void rotate(avl *avl_tree, avl_node *alpha, avl_node *beta)
 {
         for (alpha = beta->father; alpha; alpha = alpha->father) {
                 /* balance is broken at tmp by the insertion of node
@@ -516,8 +516,8 @@ void avl_insert(avl *avl_tree, const void *key, const void *value)
         avl_tree->count++;
         get_update_height(avl_tree->root);
         /* update h and lh & rh from node->father */
-        avl_node *alpha=beta->father;
-        rotate(avl_tree,alpha,beta);
+        avl_node *alpha = beta->father;
+        rotate(avl_tree, alpha, beta);
 
         free(tar);
 }
@@ -525,162 +525,135 @@ void avl_insert(avl *avl_tree, const void *key, const void *value)
 /* min node of avl_tree with the *root* */
 fs *find_min_node(avl_node *root)
 {
-        fs *tar=malloc(sizeof(*tar));
-        if (tar==nullptr){
+        fs *tar = malloc(sizeof(*tar));
+        if (tar == nullptr) {
                 print_log_with(MEMORY_ALLOCATED_ERROR);
         }
-        build_assert(tar!=nullptr);
+        build_assert(tar != nullptr);
 
         avl_node *t;
-        for(t=root;t->lc;t=t->lc);
-        tar->this=t;
-        tar->father=t->father;
+        for (t = root; t->lc; t = t->lc);
+        tar->this = t;
+        tar->father = t->father;
         return tar;
 }
 
+//TODO BUG FIX
 bool avl_remove(avl *avl_tree, const void *key)
 {
 
-        fs *ans=avl_search(avl_tree,key);
-        if(ans->this==nullptr){
+        fs *ans = avl_search(avl_tree, key);
+        if (ans->this == nullptr) {
                 print_log_with(NOTARGET);
                 return false;
         }
         //build_assert(ans->this!=nullptr);
-        avl_node *this_father=ans->father;
-        avl_node *this=ans->this;
-        if(this->rc!=nullptr && this->lc!=nullptr){
+        avl_node *this_father = ans->father;
+        avl_node *this = ans->this;
+        if (this->rc != nullptr && this->lc != nullptr) {
                 // TODO This branch tested OK! perhaps...
                 /* has 2 child */
-                fs *t=find_min_node(this->rc);
-                avl_node *min_node=t->this;
-                avl_node *min_fa=t->father;
-                if(min_node->rc==nullptr){
+                fs *t = find_min_node(this->rc);
+                avl_node *min_node = t->this;
+                avl_node *min_fa = t->father;
+                if (min_node->rc == nullptr) {
                         /* copy key & value */
-                        memcpy(this,min_node, 2*sizeof(const void*));
-                        avl_node *alpha=min_node->father;
-                        min_node->father=nullptr;
+                        memcpy(this, min_node, 2 * sizeof(const void *));
+                        avl_node *alpha = min_node->father;
+                        min_node->father = nullptr;
 
 
-                        if(min_fa->lc==min_node){
-                                min_fa->lc=nullptr;
-                        }
-                        else if(min_fa->rc==min_node){
-                                min_fa->rc=nullptr;
+                        if (min_fa->lc == min_node) {
+                                min_fa->lc = nullptr;
+                        } else if (min_fa->rc == min_node) {
+                                min_fa->rc = nullptr;
                         }
 
                         free(min_node);
                         get_update_height(avl_tree->root);
                         avl_tree->count--;
-                        int rh=alpha->rh;
+                        int rh = alpha->rh;
                         switch (rh) {
-                                case 0:{
+                                case 0: {
                                         avl_node *tmp;
-                                        for(tmp=alpha->father;tmp;tmp=tmp->father){
-                                                if(!balanced_at(tmp)){
+                                        for (tmp = alpha->father; tmp; tmp = tmp->father) {
+                                                if (!balanced_at(tmp)) {
                                                         break;
                                                 }
                                         }
-                                        rotate(avl_tree,tmp,alpha);
+                                        rotate(avl_tree, tmp, alpha);
                                         break;
                                 }
-                                case 2:{
+                                case 2: {
 
-                                        avl_node *ch=alpha->rc->rc;
-                                        if(ch!=nullptr){
-                                                rr_rotate(avl_tree,alpha,alpha->rc);
-                                        }else{
-                                                rl_rotate(avl_tree,alpha,alpha->rc,alpha->rc->lc);
+                                        avl_node *ch = alpha->rc->rc;
+                                        if (ch != nullptr) {
+                                                rr_rotate(avl_tree, alpha, alpha->rc);
+                                        } else {
+                                                rl_rotate(avl_tree, alpha, alpha->rc, alpha->rc->lc);
                                         }
                                         break;
                                 }
 
                         }
-                }
-                else {
-                        avl_node *alpha=min_node->father;
-                        avl_node *beta= min_node->rc;
-                        min_fa->lc=min_node->rc;
-                        min_node->rc->father=min_fa;
-                        min_node->father=nullptr;
-                        min_node->rc=nullptr;
-                        memcpy(this,min_node,2* sizeof(const void*));
+                } else {
+                        avl_node *alpha = min_node->father;
+                        avl_node *beta = min_node->rc;
+                        min_fa->lc = min_node->rc;
+                        min_node->rc->father = min_fa;
+                        min_node->father = nullptr;
+                        min_node->rc = nullptr;
+                        memcpy(this, min_node, 2 * sizeof(const void *));
                         free(min_node);
                         get_update_height(avl_tree->root);
                         avl_tree->count--;
-                        rotate(avl_tree,alpha,beta);
+                        rotate(avl_tree, alpha, beta);
                 }
-        }
-        else if(this->lc!=nullptr && this->rc==nullptr){
-                /* has only lc */
-                avl_node *lc=this->lc;
-                lc->father=this_father;
-                if(this_father==nullptr){
-                        avl_tree->root=lc;
-                        goto free2;
-                }
-                int cmp=avl_tree->cmp(lc->key,this_father->key);
-                if(cmp<0){
-                        this_father->lc=lc;
-                }
-                else if(cmp>0){
-                        this_father->rc=lc;
-                }
-                free2:
-                this->father=nullptr;
+        } else if (this->lc != nullptr && this->rc == nullptr) {
+                /* has only lc & lc must be leaf node */
+                avl_node *lc = this->lc;
+                memcpy(this,lc,2*sizeof(const void *));
+                lc->father=nullptr;
                 this->lc=nullptr;
-                free(this);
+                free(lc);
                 --avl_tree->count;
                 get_update_height(avl_tree->root);
-                avl_node *alpha=this_father->father;
-                avl_node *beta = this_father;
-                rotate(avl_tree,alpha,beta);
-        }
-        else if(this->lc==nullptr && this->rc!=nullptr){
-                /* has only rc */
-                avl_node *rc=this->rc;
-                if(this_father==nullptr){
-                        avl_tree->root=rc;
-                        goto free3;
-                }
-                int cmp=avl_tree->cmp(rc->key,this_father->key);
-                if(cmp<0){
-                        this_father->lc=rc;
-                }
-                else if(cmp>0){
-                        this_father->rc=rc;
-                }
-                free3:
-                this->father=nullptr;
+                avl_node *alpha = this_father;
+                rotate(avl_tree,alpha,this);
+
+        } else if (this->lc == nullptr && this->rc != nullptr) {
+                /* has only rc & rc must be leaf node */
+                avl_node *rc = this->rc;
+                memcpy(this,rc,2* sizeof(const void *));
+                rc->father=nullptr;
                 this->rc=nullptr;
-                free(this);
+                free(rc);
                 --avl_tree->count;
                 get_update_height(avl_tree->root);
-                avl_node *alpha=this_father->father;
-                avl_node *beta = this_father;
-                rotate(avl_tree,alpha,beta);
-        }
-        else if( this->rc==nullptr && this->rc == nullptr){
+                avl_node *alpha = this_father;
+                rotate(avl_tree,alpha,this);
+
+        } else if (this->rc == nullptr && this->rc == nullptr) {
                 /* has no child */
-                this->father=nullptr;
-                if(this_father==nullptr){
+                this->father = nullptr;
+                if (this_father == nullptr) {
                         goto free4;
                 }
-                int cmp=avl_tree->cmp(this->key,this_father->key);
-                if(cmp<0){
-                        this_father->lc=nullptr;
-                }
-                else if(cmp>0){
-                        this_father->rc=nullptr;
+                int cmp = avl_tree->cmp(this->key, this_father->key);
+                if (cmp < 0) {
+                        this_father->lc = nullptr;
+                } else if (cmp > 0) {
+                        this_father->rc = nullptr;
                 }
                 get_update_height(avl_tree->root);
-                avl_node *alpha=this_father->father;
+                avl_node *alpha = this_father->father;
                 avl_node *beta = this_father;
-                rotate(avl_tree,alpha,beta);
+                rotate(avl_tree, alpha, beta);
                 --avl_tree->count;
                 free4:
                 free(this);
         }
+        get_update_height(avl_tree->root);
 }
 
 void _inorder(avl_node *node)
