@@ -17,12 +17,37 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Libs/avlmini.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Libs/avlmini.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Libs/linux_rbtree.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Libs/linux_rbtree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Src/avl_rbt_test_main.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/avl_high/avlmini.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/avl_high/avlmini.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/linux_rbt_test/linux_rbtree.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/linux_rbt_test/linux_rbtree.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/linux_rbt_test/printt.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/linux_rbt_test/printt.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/list_test/_info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/list_test/list.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/list_test/list.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/parser_command_line/_info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/parser_command_line/helpers.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/parser_command_line/opt.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/parser_command_line/opt.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/parser_command_line/parse.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/parser_command_line/private.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/parser_command_line/usage.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/priority_queue_test/_info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/priority_queue_test/lpq.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/priority_queue_test/lpq.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/queue_test/_info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/queue_test/lqueue.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/stack_test/_info" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Tests/stack_test/lstack.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/errors.h" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/errors.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Libs/avl_dic.c" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/avl_dic.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libs/avl_dic.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/avl_dic.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/__main__.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/__main__.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/avl_test/avl_test.c" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/avl_test/avl_test.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/__main__.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/__main__.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/bin/database.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/database.exe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/libdb_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_lib.a" afterDir="false" />
     </list>
@@ -62,16 +87,18 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="cf.first.check.clang-format" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/Tests/avl_test" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/Libs" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="settings.editor.selected.configurable" value="preferences.fileTypes" />
     <property name="settings.editor.splitter.proportion" value="0.23868313" />
   </component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\ELIO\source\DB\Tests\avl_test" />
-      <recent name="C:\Users\ELIO\source\DB\Tests\bsearch_test" />
+      <recent name="C:\Users\ELIO\source\DB\Tests" />
+      <recent name="C:\Users\ELIO\source\DB\Tests\linux_rbt_test" />
       <recent name="C:\Users\ELIO\source\DB\Libs" />
+      <recent name="C:\Users\ELIO\source\DB\Tests\avl_high" />
+      <recent name="C:\Users\ELIO\source\DB\Tests\avl_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Users\ELIO\source\DB\Tests" />
@@ -79,9 +106,9 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.database">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
       </method>
     </configuration>
     <configuration name="cb_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="cb_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="cb_test">
@@ -119,6 +146,11 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
     <list>
       <item itemvalue="CMake Application.cb_test" />
       <item itemvalue="CMake Application.db_core" />
@@ -149,7 +181,10 @@
       <workItem from="1614163568792" duration="12040000" />
       <workItem from="1614228557342" duration="33336000" />
       <workItem from="1614266577273" duration="2864000" />
-      <workItem from="1614303737679" duration="13044000" />
+      <workItem from="1614303737679" duration="14911000" />
+      <workItem from="1614416656604" duration="8484000" />
+      <workItem from="1614428698807" duration="1517000" />
+      <workItem from="1614439461406" duration="301000" />
     </task>
     <servers />
   </component>
@@ -182,17 +217,20 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Libs/avl_dic.c</url>
-          <line>543</line>
-          <option name="timeStamp" value="20" />
+          <url>file://$PROJECT_DIR$/Src/__main__.txt</url>
+          <line>37</line>
+          <option name="timeStamp" value="38" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
     <watches-manager>
       <configuration name="CMakeRunConfiguration">
-        <watch expression="*(int*)key" language="ObjectiveC" />
+        <watch expression="*(int*)this-&gt;key" language="ObjectiveC" />
         <watch expression="*(int*)this_father-&gt;key" language="ObjectiveC" />
-        <watch expression="*(int*)tmp-&gt;key" language="ObjectiveC" />
+        <watch expression="*(int*)rc-&gt;key" language="ObjectiveC" />
+        <watch expression="*(int*)alpha-&gt;key" language="ObjectiveC" />
+        <watch expression="*(int*)beta-&gt;key" language="ObjectiveC" />
+        <watch expression="*(int*)alpha_r-&gt;key" language="ObjectiveC" />
       </configuration>
     </watches-manager>
   </component>
