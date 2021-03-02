@@ -76,7 +76,7 @@ typedef uint32_t uintptr_t;
  */
 #define __container_of__(ptr, type, mem)({\
                 const typeof( ((type*)0)->mem )* _mptr=(ptr);   \
-                (type*)( (char*)__mptr-__offsetof__(type,mem) ) \
+                (type*)( (char*)_mptr-__offsetof__(type,mem) ) \
                 })
 
 
