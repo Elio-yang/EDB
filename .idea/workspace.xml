@@ -17,16 +17,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/Core/REPL.c" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Core/REPL.h" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/errors.h" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/errors.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libs/defs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/defs.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Src/test_main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/test_main.txt" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/database.exe" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_core.a" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/lib/libdb_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_lib.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/DevelopingLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/DevelopingLog.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -174,7 +165,7 @@
       <workItem from="1614691803195" duration="2318000" />
       <workItem from="1614749851290" duration="330000" />
       <workItem from="1614777374188" duration="127000" />
-      <workItem from="1614867457687" duration="3115000" />
+      <workItem from="1614867457687" duration="4819000" />
     </task>
     <servers />
   </component>
