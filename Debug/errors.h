@@ -11,6 +11,6 @@
 #define FILE_OPEN_ERROR "File open failed!"
 #define NULLPTR         "Null pointer variable!"
 #define NOTARGET        "Object doesn't exists!"
-
+#define READERR         "Read error!"
 
 #endif //MY_DATABASE_ERRORS_H

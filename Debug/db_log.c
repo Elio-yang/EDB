@@ -31,7 +31,7 @@ void print_log(const char *fileName, const int lineNum, const char *funcName, co
 
         time_t Time=time(NULL);
         struct tm* t=localtime(&Time);
-        len += strftime(buffer_write, 32, "[%Y.%m.%d-%H:%M:%S]", t);
+        len += strftime(buffer_write, 32, "[%Y-%m-%d %H:%M:%S]", t);
 
         fileName = strrchr(fileName, '\\') + 1;
         len += sprintf(buffer_write + len, "[File:%s]", fileName);

@@ -6,5 +6,13 @@
 
 #ifndef MY_DATABASE_TIMETOOL_H
 #define MY_DATABASE_TIMETOOL_H
+#include <time.h>
+#include <stdlib.h>
+
+/*
+ * return string with time format Y-M-D H:M:S
+ * string should be free!
+ */
+extern char *ordinary_time(void);
 
 #endif //MY_DATABASE_TIMETOOL_H

@@ -12,10 +12,9 @@
 #include <stddef.h>
 #include <limits.h>
 #include <stdint.h>
-
+#include <stdbool.h>
 #define uninitialized 0x3f3f3f3f
-
-
+#define EXIT_SUCC 0
 #define __always_inline inline __attribute__((always_inline))
 #define __noinline __attribute__((noinline))
 #define __noreturn __attribute__((noreturn))
