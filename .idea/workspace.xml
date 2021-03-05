@@ -27,7 +27,6 @@
     <option name="clangTidyViaClangd" value="false" />
     <option name="formatViaClangd" value="false" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -154,7 +153,11 @@
       <workItem from="1614777374188" duration="127000" />
       <workItem from="1614867457687" duration="4843000" />
       <workItem from="1614912585690" duration="22560000" />
+<<<<<<< HEAD
       <workItem from="1614945688735" duration="1459000" />
+=======
+      <workItem from="1614955676567" duration="135000" />
+>>>>>>> 6683a45ee0874b81529d1c661a87c2f2bfedafc7
     </task>
     <servers />
   </component>
