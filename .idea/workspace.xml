@@ -5,8 +5,7 @@
       <config projectName="MY_DataBase" targetName="db_lib" />
       <config projectName="MY_DataBase" targetName="db_user" />
       <config projectName="MY_DataBase" targetName="db_debug" />
-      <config projectName="MY_DataBase" targetName="database" />
-      <config projectName="MY_DataBase" targetName="db_ui" />
+      <config projectName="MY_DataBase" targetName="sqldb" />
       <config projectName="MY_DataBase" targetName="db_core" />
     </generated>
   </component>
@@ -18,11 +17,17 @@
   <component name="ChangeListManager">
     <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Core/REPL.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/REPL.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/db_log.c" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/db_log.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Debug/db_log.h" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/db_log.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/bin/database.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/database.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/compile.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/compile.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/compile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/compile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libs/defs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/defs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Src/CMakeLists.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test.txt" beforeDir="false" afterPath="$PROJECT_DIR$/Tests/test.txt" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/lib/libdb_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_core.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libdb_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_lib.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libdb_user.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_user.a" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -48,13 +53,15 @@
     <option name="directoryName" value="zwz96r8e" />
   </component>
   <component name="OCResolveContextSettings">
-    <option name="configuration" value="0-Debug-db_lib" />
+    <option name="configuration" value="0-Debug-db_ui" />
   </component>
   <component name="ProblemsViewState">
     <option name="selectedIndex" value="1" />
   </component>
   <component name="ProjectId" id="1oHUfKyHpd9bWoMI8lKfcgaPFLz" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -65,6 +72,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="add_unversioned_files" value="$PROJECT_DIR$/bin/test.rb" />
     <property name="cf.first.check.clang-format" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/Libs" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -80,23 +88,19 @@
       <recent name="C:\Users\ELIO\source\DB\Tests\avl_test" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\ELIO\source\DB\bin" />
       <recent name="C:\Users\ELIO\source\DB\trash" />
       <recent name="C:\Users\ELIO\source\DB\Tests" />
       <recent name="C:\Users\ELIO\source\DB" />
     </key>
   </component>
-  <component name="RunManager" selected="CMake Application.database">
+  <component name="RunManager" selected="CMake Application.sqldb">
     <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="cb_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="cb_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="cb_test">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="database" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="database" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="database">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -116,12 +120,12 @@
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="db_ui" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="db_ui" CONFIG_NAME="Debug">
+    <configuration name="db_user" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="db_user" CONFIG_NAME="Debug">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
-    <configuration name="db_user" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="db_user" CONFIG_NAME="Debug">
+    <configuration name="sqldb" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="sqldb" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="sqldb">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
@@ -136,8 +140,7 @@
       <item itemvalue="CMake Application.db_core" />
       <item itemvalue="CMake Application.db_debug" />
       <item itemvalue="CMake Application.db_lib" />
-      <item itemvalue="CMake Application.database" />
-      <item itemvalue="CMake Application.db_ui" />
+      <item itemvalue="CMake Application.sqldb" />
       <item itemvalue="CMake Application.db_user" />
     </list>
   </component>
@@ -171,7 +174,7 @@
       <workItem from="1614749851290" duration="330000" />
       <workItem from="1614777374188" duration="127000" />
       <workItem from="1614867457687" duration="4843000" />
-      <workItem from="1614912585690" duration="1286000" />
+      <workItem from="1614912585690" duration="22560000" />
     </task>
     <servers />
   </component>

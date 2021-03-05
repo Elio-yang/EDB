@@ -45,13 +45,16 @@ void delete_input_buffer(InputBuffer *inputBuffer)
 void print_info(void)
 {
         char *buf = ordinary_time();
-        printf("SQLdb version 0.0.1 %s\n"
+        printf("SQL-db version 0.0.1 %s\n"
                "MIT License\n"
+               "https://github.com/Elio-yang/ProjectDB\n"
                "Copyright (c) 2021 Elio-yang\n"
                "Enter \".help\" for usage hints.\n", buf);
 }
 
 void print_help(void)
 {
-        printf(".exit for exits SQLdb\n");
+        printf("\t.exit for exits SQLdb\n"
+                "\tselect for show all rows\n"
+                "\tinsert @id @username @email for add a row record\n");
 }

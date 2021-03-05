@@ -14,12 +14,11 @@ SET(EXECUTABLE_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/bin)
 AUX_SOURCE_DIRECTORY(. DIR_SRCS)
 
 #当前目录作为可执行目录源文件文件夹，全部用来生成database
-ADD_EXECUTABLE(database ${DIR_SRCS})
+ADD_EXECUTABLE(sqldb ${DIR_SRCS})
 
 #链接db_lib db_core db_ui db_user
-TARGET_LINK_LIBRARIES(database db_lib)
-TARGET_LINK_LIBRARIES(database db_core)
-TARGET_LINK_LIBRARIES(database db_ui)
-TARGET_LINK_LIBRARIES(database db_user)
-TARGET_LINK_LIBRARIES(database db_debug)
+TARGET_LINK_LIBRARIES(sqldb db_lib)
+TARGET_LINK_LIBRARIES(sqldb db_core)
+TARGET_LINK_LIBRARIES(sqldb db_user)
+TARGET_LINK_LIBRARIES(sqldb db_debug)
 

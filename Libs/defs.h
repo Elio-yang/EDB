@@ -15,9 +15,13 @@
 #include <stdbool.h>
 #define uninitialized 0x3f3f3f3f
 #define EXIT_SUCC 0
+#define COLUMN_USERNAME_SIZE 32
+#define COLUMN_EMAIL_SIZE 255
+#define BUFFER_SIZE (4*1024)
 #define __always_inline inline __attribute__((always_inline))
 #define __noinline __attribute__((noinline))
 #define __noreturn __attribute__((noreturn))
+#define TABLE_MAX_PAGE 100
 
 #if !defined(bool)
 /* Represents true-or-false */
@@ -59,6 +63,8 @@ typedef uint32_t uintptr_t;
 
 /*Get the number of elements in array a*/
 #define ARRAY_SIZE(a) ((sizeof(a)/sizeof((a)[0]))+__must_be_array(a))
+
+#define size_of_member(struct,mem) (sizeof(((struct*)0)->mem))
 
 /**
  * Get the offset of a structure member
