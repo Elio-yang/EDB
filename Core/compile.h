@@ -64,7 +64,7 @@ typedef struct {
 
 
 
-Meta_command_result do_meta_command(InputBuffer *input_buffer);
+Meta_command_result do_meta_command(InputBuffer *input_buffer,Table *table);
 
 Prepare_result prepare_statement(InputBuffer *input_buffer, Statement *statement);
 
