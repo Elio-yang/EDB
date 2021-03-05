@@ -11,34 +11,31 @@
 
 InputBuffer *new_input_buffer()
 {
-        InputBuffer *new_buffer=(InputBuffer*)malloc(sizeof(*new_buffer));
-        new_buffer->buffer=nullptr;
-        new_buffer->buffer_len=0;
-        new_buffer->input_len=0;
+        InputBuffer *new_buffer = (InputBuffer *) malloc(sizeof(*new_buffer));
+        new_buffer->buffer = nullptr;
+        new_buffer->buffer_len = 0;
+        new_buffer->input_len = 0;
         return new_buffer;
 }
+
 void print_sign(void)
 {
         printf("db > ");
 }
+
 void read_input(InputBuffer *input_buffer)
 {
-        ssize_t bytes_read=
-                getline(&(input_buffer->buffer),&(input_buffer->buffer_len),stdin);
-        if (bytes_read<0){
+        ssize_t bytes_read =
+                getline(&(input_buffer->buffer), &(input_buffer->buffer_len), stdin);
+        if (bytes_read < 0) {
                 printf("Error reading input\n");
-#ifndef _DEBUG
+                print_log_with(READERR);
                 exit(EXIT_FAILURE);
-#endif
         }
-#ifdef _DEBUG
-        build_assert( bytes_read>=0);
-        print_log_with(READERR);
-        exit(EXIT_FAILURE);
-#endif
-        input_buffer->input_len=bytes_read-1;
-        input_buffer->buffer[bytes_read-1]='\0';
+        input_buffer->input_len = bytes_read - 1;
+        input_buffer->buffer[bytes_read - 1] = '\0';
 }
+
 void delete_input_buffer(InputBuffer *inputBuffer)
 {
         free(inputBuffer->buffer);
@@ -47,11 +44,11 @@ void delete_input_buffer(InputBuffer *inputBuffer)
 
 void print_info(void)
 {
-        char *buf=ordinary_time();
+        char *buf = ordinary_time();
         printf("SQLdb version 0.0.1 %s\n"
                "MIT License\n"
                "Copyright (c) 2021 Elio-yang\n"
-               "Enter \".help\" for usage hints.\n",buf);
+               "Enter \".help\" for usage hints.\n", buf);
 }
 
 void print_help(void)

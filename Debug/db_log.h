@@ -20,7 +20,6 @@ typedef  char* error_t;
 #define get_file __FILE__
 
 static const unsigned long long log_file_max_size = 5 * 1024 * 1024;
-static const char * log_file_name = "\\log.txt";
 
 void print_log(const char *fileName, const int lineNum, const char *funcName, const char *fmt, ...);
 void print_log_with(error_t error);

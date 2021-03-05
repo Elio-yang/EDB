@@ -17,7 +17,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/DevelopingLog.md" beforeDir="false" afterPath="$PROJECT_DIR$/DevelopingLog.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/REPL.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/REPL.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/db_log.c" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/db_log.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Debug/db_log.h" beforeDir="false" afterPath="$PROJECT_DIR$/Debug/db_log.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/bin/database.exe" beforeDir="false" afterPath="$PROJECT_DIR$/bin/database.exe" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libdb_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_core.a" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,9 +86,9 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.database">
-    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
       <method v="2">
-        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <configuration name="cb_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="cb_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="cb_test">
@@ -165,7 +170,8 @@
       <workItem from="1614691803195" duration="2318000" />
       <workItem from="1614749851290" duration="330000" />
       <workItem from="1614777374188" duration="127000" />
-      <workItem from="1614867457687" duration="4819000" />
+      <workItem from="1614867457687" duration="4843000" />
+      <workItem from="1614912585690" duration="1286000" />
     </task>
     <servers />
   </component>

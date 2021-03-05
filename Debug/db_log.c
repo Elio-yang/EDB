@@ -10,6 +10,7 @@
 #include <defs.h>
 
 #define __NO_MINGW_LFS
+static const char * log_file_name = "\\log.txt";
 
 void print_log(const char *fileName, const int lineNum, const char *funcName, const char *fmt, ...)
 {
