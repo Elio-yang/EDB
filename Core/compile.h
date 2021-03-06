@@ -14,7 +14,8 @@
 
 typedef enum {
         META_COMMAND_SUCCESS,
-        META_COMMAND_UNRECOGNIZED_COMMAND
+        META_COMMAND_UNRECOGNIZED_COMMAND,
+        META_OPEN_SUCCESS
 } Meta_command_result;
 
 typedef enum {
@@ -56,9 +57,12 @@ typedef struct {
         uint32_t file_len;
         /* all 'pages' stored in array */
         void *pages[TABLE_MAX_PAGE];
-} Pager;
+} Page_pool;
+
 typedef struct {
-        Pager *pager;
+        /* page management unit */
+        Page_pool *page_mu;
+        /* 有多少个row */
         uint32_t num_rows;
 } Table;
 
@@ -84,10 +88,18 @@ void *row_slot(Table *table,uint32_t row_num);
 
 void print_row(Row * row);
 
-Pager *pager_open(const char *filename);
+Page_pool *page_pool_open(const char *filename);
 
 Table *db_open(const char *filename);
 
-void *delete_table(Table *table);
+void db_close(Table *table);
+
+void pager_flush(Page_pool *pager, uint32_t page_id, uint32_t size);
+
+void *get_page(Page_pool *pager, uint32_t page_id);
+
+Table *load_file(void);
+
+void logic_repl(Table *table);
 
 #endif //MY_DATABASE_PARSER_H

@@ -21,6 +21,8 @@ void read_input(InputBuffer *input_buffer);
 void print_help(void);
 void print_sign(void);
 void print_info(void);
+void print_init(void);
+
 
 
 #endif //MY_DATABASE_REPL_H
