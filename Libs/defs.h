@@ -18,9 +18,10 @@
 #define COLUMN_USERNAME_SIZE 32
 #define COLUMN_EMAIL_SIZE 255
 #define BUFFER_SIZE (4*1024)
-#define __always_inline inline __attribute__((always_inline))
-#define __noinline __attribute__((noinline))
-#define __noreturn __attribute__((noreturn))
+//#include <features.h>
+//#define __always_inline inline __attribute__((always_inline))
+//#define __noinline __attribute__((noinline))
+//#define __noreturn __attribute__((noreturn))
 #define TABLE_MAX_PAGE 100
 #define MAX_FILENAME_LEN 255
 #if !defined(bool)
@@ -30,21 +31,21 @@ typedef int bool;
 
 #define nullptr (void*)0
 /* Explicitly-sized versions of integer types */
-typedef unsigned char uint8_t;
-typedef short int16_t;
-typedef unsigned short uint16_t;
-typedef int int32_t;
-typedef unsigned int uint32_t;
-typedef long long int64_t;
-typedef unsigned long long uint64_t;
-
-/* *
- * Pointers and addresses are 32 bits long.
- * We use pointer types to represent addresses,
- * uintptr_t to represent the numerical values of addresses.
- * */
-typedef int32_t intptr_t;
-typedef uint32_t uintptr_t;
+//typedef unsigned char uint8_t;
+//typedef short int16_t;
+//typedef unsigned short uint16_t;
+//typedef int int32_t;
+//typedef unsigned int uint32_t;
+//typedef long long int64_t;
+//typedef unsigned long long uint64_t;
+//
+///* *
+// * Pointers and addresses are 32 bits long.
+// * We use pointer types to represent addresses,
+// * uintptr_t to represent the numerical values of addresses.
+// * */
+//typedef int32_t intptr_t;
+//typedef uint32_t uintptr_t;
 
 /* size_t is used for memory object sizes */
 #include <stddef.h>

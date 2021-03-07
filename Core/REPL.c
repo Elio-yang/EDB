@@ -45,19 +45,23 @@ void delete_input_buffer(InputBuffer *inputBuffer)
 void print_info(void)
 {
         char *buf = ordinary_time();
-        printf("SQL-db version 0.0.1 %s\n"
-               "MIT License\n"
-               "https://github.com/Elio-yang/ProjectDB\n"
-               "Copyright (c) 2021 Elio-yang\n"
-               "Enter \".help\" for usage hints.\n", buf);
+        printf(""
+                "*-----------------------------------------*\n"
+                "| SQL-db version 0.1 %s  |\n"
+                "| MIT License                             |\n"
+                "| https://github.com/Elio-yang/ProjectDB  |\n"
+                "| Copyright (c) 2021 Elio-yang            |\n"
+                "*-----------------------------------------*\n"
+                "Enter \".help\" for usage hints.\n", buf);
 }
 
 void print_help(void)
 {
-        printf(".open <filename>\t:open & load a .db file\n"
-               ".exit \t: exits SQLdb\n"
-               "select\t:show all rows\n"
-               "insert <id> <username> <email>\t:insert a row record\n");
+        printf("Options:\n"
+                "  .open <filename>                     : open & load a .db file\n"
+                "  .exit                                : exits SQLdb\n"
+                "  select                               : show all rows\n"
+                "  insert <id> <username> <email>       : insert a row record\n");
 }
 void print_init(void)
 {

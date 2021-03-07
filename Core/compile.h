@@ -11,7 +11,6 @@
 #include <REPL.h>
 #include <defs.h>
 
-
 typedef enum {
         META_COMMAND_SUCCESS,
         META_COMMAND_UNRECOGNIZED_COMMAND,
@@ -43,7 +42,7 @@ typedef enum {
 } Statement_type;
 
 typedef enum {
-        EXECUTE_SUCCESS,EXECUTE_TABLE_FULL
+        EXECUTE_SUCCESS,EXECUTE_TABLE_FULL,UNKOWN
 }Execute_result;
 
 typedef struct {
@@ -66,25 +65,32 @@ typedef struct {
         uint32_t num_rows;
 } Table;
 
+typedef struct {
+        Table *table;
+        uint32_t row_id;
+        /*End Of Table*/
+        bool EOT;
+}Cursor;
 
 
-Meta_command_result do_meta_command(InputBuffer *input_buffer,Table *table);
 
-Prepare_result prepare_statement(InputBuffer *input_buffer, Statement *statement);
+Meta_command_result do_meta_command(InputBuffer *in_buf, Table *tb);
 
-Prepare_result prepare_insert(InputBuffer *input_buffer,Statement *statement);
+Prepare_result prepare_statement(InputBuffer *in_buf, Statement *statement);
 
-Execute_result execute_insert(Statement *statement,Table *table);
+Prepare_result prepare_insert(InputBuffer *in_buf, Statement *statement);
 
-Execute_result execute_select(Statement *statement,Table *table);
+Execute_result execute_insert(Statement *statement,Table *tb);
 
-Execute_result  execute_statement(Statement *statement,Table *table);
+Execute_result execute_select(Statement *statement,Table *tb);
 
-void serialize_row(Row *source, void *destination);
+Execute_result  execute_statement(Statement *statement,Table *tb);
 
-void deserialize_row(void *source, Row *destination);
+void serialize_row(Row *src, void *dest);
 
-void *row_slot(Table *table,uint32_t row_num);
+void deserialize_row(void *src, Row *dest);
+
+void *cursor_value(Cursor *cursor);
 
 void print_row(Row * row);
 
@@ -92,14 +98,20 @@ Page_pool *page_pool_open(const char *filename);
 
 Table *db_open(const char *filename);
 
-void db_close(Table *table);
+void db_close(Table *tb);
 
-void pager_flush(Page_pool *pager, uint32_t page_id, uint32_t size);
+void pager_flush(Page_pool *page_mu, uint32_t page_id, uint32_t size);
 
-void *get_page(Page_pool *pager, uint32_t page_id);
+void *get_page(Page_pool *page_mu, uint32_t page_id);
 
 Table *load_file(void);
 
-void logic_repl(Table *table);
+void logic_repl(Table *tb);
+
+Cursor *table_start(Table * tb);
+
+Cursor *table_end(Table *tb);
+
+void cursor_advance(Cursor *cursor);
 
 #endif //MY_DATABASE_PARSER_H
