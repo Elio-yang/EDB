@@ -1,8 +1,8 @@
-../../Desktop/ProjectDB/build/
+build/
 cmake-build-debug/
 bin/
 lib/
-.idea
+
 
 
 

@@ -22,7 +22,7 @@
 #define __noinline __attribute__((noinline))
 #define __noreturn __attribute__((noreturn))
 #define TABLE_MAX_PAGE 100
-
+#define MAX_FILENAME_LEN 255
 #if !defined(bool)
 /* Represents true-or-false */
 typedef int bool;

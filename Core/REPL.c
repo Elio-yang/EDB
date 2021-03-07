@@ -54,7 +54,13 @@ void print_info(void)
 
 void print_help(void)
 {
-        printf("\t.exit for exits SQLdb\n"
-                "\tselect for show all rows\n"
-                "\tinsert @id @username @email for add a row record\n");
+        printf(".open <filename>\t:open & load a .db file\n"
+               ".exit \t: exits SQLdb\n"
+               "select\t:show all rows\n"
+               "insert <id> <username> <email>\t:insert a row record\n");
+}
+void print_init(void)
+{
+        printf("Must input a database filename(ended with .db) first.\n");
+        printf("filename > :");
 }
