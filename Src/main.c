@@ -6,7 +6,6 @@
 
 #include <REPL.h>
 #include <compile.h>
-#include <defs.h>
 
 int main(int argc,char* argv[])
 {

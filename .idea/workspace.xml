@@ -17,41 +17,7 @@
   <component name="ChangeListManager">
     <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/REPL.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/REPL.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/REPL.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/REPL.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/compile.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/compile.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Core/compile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/compile.h" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Libs/defs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/defs.h" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Src/main.c" beforeDir="false" afterPath="$PROJECT_DIR$/Src/main.c" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/alignof_test/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/alignof_test/alignof.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/alignof_test/compiler.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/alignof_test/config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/alignof_test/run.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/alignof_test/tap.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/alignof_test/tap.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/avl_high/avlmini.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/avl_high/avlmini.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/avl_test/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/avl_test/avl.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/avl_test/avl.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/avl_test/avl_test.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/bsearch_test/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/bsearch_test/bsearch.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/bsearch_test/bsearch_test.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/bsearch_test/config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/bsearch_test/typesafe_cb.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/cb_test/CMakeLists.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/cb_test/cb_test.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/cb_test/config.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/cb_test/typesafe_cb.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/linux_rbt_test/linux_rbtree.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/linux_rbt_test/linux_rbtree.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/linux_rbt_test/printt.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/linux_rbt_test/printt.h" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/list_test/_info" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/list_test/list.c" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Tests/list_test/list.h" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -119,11 +85,6 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.sqldb">
-    <configuration default="true" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
-      <method v="2">
-        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
-      </method>
-    </configuration>
     <configuration name="cb_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="cb_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="cb_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -152,6 +113,11 @@
     <configuration name="sqldb" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="sqldb" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="sqldb">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -195,7 +161,8 @@
       <workItem from="1614867457687" duration="4843000" />
       <workItem from="1614912585690" duration="22560000" />
       <workItem from="1614945688735" duration="1459000" />
-      <workItem from="1615048598131" duration="345000" />
+      <workItem from="1615048598131" duration="455000" />
+      <workItem from="1615081991487" duration="52000" />
     </task>
     <servers />
   </component>
