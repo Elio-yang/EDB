@@ -1,0 +1,2 @@
+/usr/bin/llvm-ar qc ../lib/libdb_lib.a  CMakeFiles/db_lib.dir/avl.c.o CMakeFiles/db_lib.dir/b_tree.c.o CMakeFiles/db_lib.dir/bsearch.c.o CMakeFiles/db_lib.dir/file_sys.c.o CMakeFiles/db_lib.dir/linux_rbtree.c.o CMakeFiles/db_lib.dir/list.c.o CMakeFiles/db_lib.dir/mm.c.o CMakeFiles/db_lib.dir/string_db.c.o CMakeFiles/db_lib.dir/timetool.c.o
+/usr/bin/llvm-ranlib ../lib/libdb_lib.a

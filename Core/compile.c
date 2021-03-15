@@ -11,10 +11,10 @@
 #include <errno.h>
 #include <string.h>
 #include <debug.h>
-#include <mathtool.h>
 #include <unistd.h>
 #include <fcntl.h>
 
+/*---------------------------------------------------------------------------*/
 const uint32_t ID_SIZE = size_of_member(Row, id);
 const uint32_t USERNAME_SIZE = size_of_member(Row, username);
 const uint32_t EMAIL_SIZE = size_of_member(Row, email);
@@ -23,13 +23,124 @@ const uint32_t USERNAME_OFFSET = offsetof(Row, username);
 const uint32_t EMAIL_OFFSET = offsetof(Row, email);
 const uint32_t ROW_SIZE = ID_SIZE + USERNAME_SIZE + EMAIL_SIZE;
 const uint32_t PAGE_SIZE = 4096;
+/*---------------------------------------------------------------------------*/
 
-/* how many rows in one page */
-const uint32_t ROWS_PER_PAGE = PAGE_SIZE / ROW_SIZE;
+/*
+   Page(leaf node) Layout
+ *----------------------*
+ | node_type        1B  |----
+ * ---------------------*   |
+ | is_root          1B  |   |------> common node header
+ * ---------------------*   |
+ | parent_pointer   4B  |---|
+ * ---------------------*
+ | num_cell         4B  |
+ * ---------------------*
+ | key0             4B  |
+ * ---------------------*
+ | value0         293B  |
+ * ---------------------*
+ |          ......      |
+ * ---------------------*
+ | key12            4B  |
+ * ---------------------*
+ | value12        293B  |
+ * ---------------------*
+ | wasted space   225B  |
+ * ---------------------*
+        total    4096B
 
-/* how many rows in all pages */
-const uint32_t TABLE_MAX_ROWS = ROWS_PER_PAGE * TABLE_MAX_PAGE;
+common node header layout
+*/
+const uint32_t NODE_TYPE_SIZE = sizeof(uint8_t);
+const uint32_t NODE_TYPE_OFFSET = 0;
+const uint32_t IS_ROOT_SIZE = sizeof(uint8_t);
+const uint32_t IS_ROOT_OFFSET = NODE_TYPE_SIZE;
+const uint32_t PARENT_POINTER_SIZE = sizeof(uint32_t);
+const uint32_t PARENT_POINTER_OFFSET = IS_ROOT_OFFSET + IS_ROOT_SIZE;
+const uint8_t COMMON_NODE_HEADER_SIZE = NODE_TYPE_SIZE + IS_ROOT_SIZE + PARENT_POINTER_SIZE;
+/* leaf node header layout */
+const uint32_t LEAF_NODE_NUM_CELLS_SIZE = sizeof(uint32_t);
+const uint32_t LEAF_NODE_NUM_CELLS_OFFSET = COMMON_NODE_HEADER_SIZE;
+const uint32_t LEAF_NODE_HEADER_SIZE = COMMON_NODE_HEADER_SIZE + LEAF_NODE_NUM_CELLS_SIZE;
+/* leaf node body layout */
+const uint32_t LEAF_NODE_KEY_SIZE = sizeof(uint32_t);
+const uint32_t LEAF_NODE_KEY_OFFSET = 0;
+const uint32_t LEAF_NODE_VALUE_SIZE = ROW_SIZE;
+const uint32_t LEAF_NODE_VALUE_OFFSET =LEAF_NODE_KEY_OFFSET + LEAF_NODE_KEY_SIZE;
+const uint32_t LEAF_NODE_CELL_SIZE = LEAF_NODE_KEY_SIZE + LEAF_NODE_VALUE_SIZE;
+const uint32_t LEAF_NODE_SPACE_FOR_CELLS = PAGE_SIZE - LEAF_NODE_HEADER_SIZE;
+const uint32_t LEAF_NODE_MAX_CELLS = LEAF_NODE_SPACE_FOR_CELLS / LEAF_NODE_CELL_SIZE;
+/*---------------------------------------------------------------------------*/
 
+/* how many cells are contained in this page currently */
+uint32_t *leaf_node_num_cells(void *node)
+{
+        return node+LEAF_NODE_NUM_CELLS_OFFSET;
+}
+/* position <k,v> by cell_num */
+void *leaf_node_cell(void *node,uint32_t cell_num)
+{
+        return node+LEAF_NODE_HEADER_SIZE+cell_num*LEAF_NODE_CELL_SIZE;
+}
+
+uint32_t *leaf_node_key(void *node,uint32_t cell_num)
+{
+        /* change the way of interpret the pointer */
+        return leaf_node_cell(node,cell_num);
+}
+
+uint32_t *leaf_node_value(void *node,uint32_t cell_num)
+{
+        return leaf_node_cell(node,cell_num)+LEAF_NODE_KEY_SIZE;
+}
+
+void initialize_leaf_node(void *node)
+{
+        *leaf_node_num_cells(node)=0;
+}
+
+void leaf_node_insert(Cursor *cursor,uint32_t key,Row *value)
+{
+        void *node=get_page(cursor->table->page_mu,cursor->page_num);
+        uint32_t num_cells=*leaf_node_num_cells(node);
+        if(num_cells>=LEAF_NODE_MAX_CELLS){
+                printf("Need to implement splitting a leaf node.\n");
+                exit(EXIT_FAILURE);
+        }
+        if(cursor->cell_num < num_cells){
+                for(uint32_t i=num_cells;i>cursor->cell_num;i--){
+                        memcpy(leaf_node_cell(node,i),leaf_node_cell(node,i-1),LEAF_NODE_CELL_SIZE);
+                }
+        }
+        ++(*leaf_node_num_cells(node));
+        *(leaf_node_key(node,cursor->cell_num))=key;
+        serialize_row(value,leaf_node_value(node,cursor->cell_num));
+}
+/*---------------------------------------------------------------------------*/
+
+
+
+/*---------------------------------------------------------------------------*/
+void print_const(void)
+{
+        printf("ROW_SIZE: %d\n", ROW_SIZE);
+        printf("COMMON_NODE_HEADER_SIZE: %d\n", COMMON_NODE_HEADER_SIZE);
+        printf("LEAF_NODE_HEADER_SIZE: %d\n", LEAF_NODE_HEADER_SIZE);
+        printf("LEAF_NODE_CELL_SIZE: %d\n", LEAF_NODE_CELL_SIZE);
+        printf("LEAF_NODE_SPACE_FOR_CELLS: %d\n", LEAF_NODE_SPACE_FOR_CELLS);
+        printf("LEAF_NODE_MAX_CELLS: %d\n", LEAF_NODE_MAX_CELLS);
+}
+
+void print_tree(void *node)
+{
+        uint32_t num_cells=*leaf_node_num_cells(node);
+        printf("leaf(size %d)\n",num_cells);
+        for(uint32_t i=0;i<num_cells;i++){
+                uint32_t key=*leaf_node_key(node,i);
+                printf("  - %d : %d\n", i, key);
+        }
+}
 
 Meta_command_result do_meta_command(InputBuffer *in_buf, Table *tb) {
         char *copyinput = (char *) malloc(sizeof(char) * (strlen(in_buf->buffer)));
@@ -39,7 +150,8 @@ Meta_command_result do_meta_command(InputBuffer *in_buf, Table *tb) {
                 db_close(tb);
                 delete_input_buffer(in_buf);
                 exit(EXIT_SUCCESS);
-        } else if (strcmp(in_buf->buffer, ".help") == 0) {
+        }
+        else if (strcmp(in_buf->buffer, ".help") == 0) {
                 print_help();
                 return META_COMMAND_SUCCESS;
         }
@@ -51,7 +163,19 @@ Meta_command_result do_meta_command(InputBuffer *in_buf, Table *tb) {
                         exit(EXIT_FAILURE);
                 }
                 return META_OPEN_SUCCESS;
-        } else {
+        }
+        else if(strcmp(in_buf->buffer,".const")==0){
+                printf("Constants:\n");
+                print_const();
+                return META_COMMAND_SUCCESS;
+
+        }
+        else if(strcmp(in_buf->buffer,".tree")==0){
+                printf("Tree:\n");
+                print_tree(get_page(tb->page_mu,0));
+                return META_COMMAND_SUCCESS;
+        }
+        else {
                 return META_COMMAND_UNRECOGNIZED_COMMAND;
         }
 
@@ -108,6 +232,8 @@ void print_sth(char ch, int n) {
                 printf("%c", ch);
         }
 }
+
+
 
 /* simple version row  |id|username|email| */
 void print_row(Row *row) {
@@ -172,18 +298,19 @@ void print_row(Row *row) {
                 printf("|");
         }
         printf("\n");
-        print_sth('-',100);
+        print_sth('-', 100);
         printf("\n");
 }
 
 Execute_result execute_insert(Statement *statement, Table *tb) {
-        if (tb->num_rows >= TABLE_MAX_ROWS) {
+        void *node=get_page(tb->page_mu,tb->root_page_num);
+        if(*(leaf_node_num_cells(node)) >= LEAF_NODE_MAX_CELLS){
                 return EXECUTE_TABLE_FULL;
         }
+
         Row *row_to_insert = &(statement->row_to_insert);
         Cursor *cursor = table_end(tb);
-        serialize_row(row_to_insert, cursor_value(cursor));
-        tb->num_rows++;
+        leaf_node_insert(cursor,row_to_insert->id,row_to_insert);
         free(cursor);
         return EXECUTE_SUCCESS;
 }
@@ -245,12 +372,13 @@ void deserialize_row(void *src, Row *dest) {
         memcpy(&(dest->username), src + USERNAME_OFFSET, USERNAME_SIZE);
         memcpy(&(dest->email), src + EMAIL_OFFSET, EMAIL_SIZE);
 }
+/*---------------------------------------------------------------------------*/
 
 void *get_page(Page_pool *page_mu, uint32_t page_id) {
         /* 页序号超出了最大可支持的页数 */
-        if (page_id > TABLE_MAX_ROWS) {
+        if (page_id > TABLE_MAX_PAGE) {
                 printf("Tried to fetch page number out of bound.%d > %d\n",
-                       page_id, TABLE_MAX_ROWS);
+                       page_id, TABLE_MAX_PAGE);
                 exit(EXIT_FAILURE);
         }
         /* 该页未使用 */
@@ -280,20 +408,19 @@ void *get_page(Page_pool *page_mu, uint32_t page_id) {
                 }
                 /* 设置page_pool 的映射关系 */
                 page_mu->pages[page_id] = page;
+                if(page_id>=page_mu->num_pages){
+                        page_mu->num_pages=page_id+1;
+                }
+
         }
         return page_mu->pages[page_id];
 }
 
 void *cursor_value(Cursor *cursor) {
         /* 在第几页 */
-        uint32_t row_num = cursor->row_id;
-        uint32_t page_id = row_num / ROWS_PER_PAGE;
-
+        uint32_t page_id=cursor->page_num;
         void *page = get_page(cursor->table->page_mu, page_id);
-        uint32_t row_offset = row_num % ROWS_PER_PAGE;
-        uint32_t byte_offset = row_offset * ROW_SIZE;
-        /* return the pointer of this row */
-        return page + byte_offset;
+        return leaf_node_value(page,cursor->cell_num);
 }
 
 Page_pool *page_pool_open(const char *filename) {
@@ -317,6 +444,11 @@ Page_pool *page_pool_open(const char *filename) {
         Page_pool *page_mu = malloc(sizeof(Page_pool));
         page_mu->file_len = file_len;
         page_mu->fd = fd;
+        page_mu->num_pages=(file_len/PAGE_SIZE);
+        if(file_len%PAGE_SIZE!=0){
+                printf(".db file is not a whole number of pages. Corrupt file.\n");
+                exit(EXIT_FAILURE);
+        }
         /* 初始化page_pool */
         for (uint32_t i = 0; i < TABLE_MAX_PAGE; i++) {
                 page_mu->pages[i] = nullptr;
@@ -327,22 +459,25 @@ Page_pool *page_pool_open(const char *filename) {
 /* open the database file */
 Table *db_open(const char *filename) {
         Page_pool *page_mu = page_pool_open(filename);
-        /* 数据库.db文件包含多少个row */
-        uint32_t num_rows = page_mu->file_len / ROW_SIZE;
         Table *table = malloc(sizeof(Table));
         if (table == nullptr) {
                 print_log_with(MEMORY_ALLOCATED_ERROR);
 
         }
-
-        table->num_rows = num_rows;
+        table->root_page_num=0;
         table->page_mu = page_mu;
+        /* new db file */
+        if(page_mu->num_pages==0){
+                void *root_node=get_page(page_mu,0);
+                initialize_leaf_node(root_node);
+        }
+
         /* 根据文件返回一个数据库表 */
         return table;
 }
 
-/* flush 来存到磁盘上，实现永久化，在close时调用 */
-void pager_flush(Page_pool *page_mu, uint32_t page_id, uint32_t size) {
+/* flush 来存到磁盘上，实现永久化，在close时调用 store a page each time*/
+void pager_flush(Page_pool *page_mu, uint32_t page_id) {
         if (page_mu->pages[page_id] == nullptr) {
                 printf("Tried to flush null page.\n");
                 exit(EXIT_FAILURE);
@@ -358,7 +493,7 @@ void pager_flush(Page_pool *page_mu, uint32_t page_id, uint32_t size) {
         }
         /* 将这一页写到文件中去 */
         ssize_t bytes_written =
-                write(page_mu->fd, page_mu->pages[page_id], size);
+                write(page_mu->fd, page_mu->pages[page_id], PAGE_SIZE);
         if (bytes_written == -1) {
                 printf("Error writing: %d\n", errno);
                 exit(EXIT_FAILURE);
@@ -368,26 +503,14 @@ void pager_flush(Page_pool *page_mu, uint32_t page_id, uint32_t size) {
 void db_close(Table *tb) {
         Page_pool *page_mu = tb->page_mu;
         /* 占用了多少页 */
-        uint32_t num_full_pages = tb->num_rows / ROWS_PER_PAGE;
-        for (uint32_t i = 0; i < num_full_pages; i++) {
+        for (uint32_t i = 0; i < page_mu->num_pages ; i++) {
                 if (page_mu->pages[i] == nullptr) {
                         continue;
                 }
                 /* 该页使用过，写回磁盘 */
-                pager_flush(page_mu, i, PAGE_SIZE);
+                pager_flush(page_mu, i);
                 free(page_mu->pages[i]);
                 page_mu->pages[i] = nullptr;
-        }
-        /* 文件末尾需要的部分页 see: get_page() 使用B树以后不需要这个 */
-        uint32_t num_additional_rows = tb->num_rows % ROWS_PER_PAGE;
-        if (num_additional_rows > 0) {
-                uint32_t page_num = num_full_pages;
-                if (page_mu->pages[page_num] != nullptr) {
-                        pager_flush(page_mu, page_num,
-                                    num_additional_rows * ROW_SIZE);
-                        free(page_mu->pages[page_num]);
-                        page_mu->pages[page_num] = nullptr;
-                }
         }
         /*
          * 关闭当前.db文件，在此前，该文件一直保持打开，
@@ -418,8 +541,8 @@ Table *load_file(void) {
         }
         getline(&Filename, &name_len, stdin);
         char *file = strtok(Filename, " ");
-        size_t len=strlen(file);
-        *(file+len-1)='\0';
+        size_t len = strlen(file);
+        *(file + len - 1) = '\0';
         if (file == nullptr) {
                 printf("Must supply a database filename.\n");
         }
@@ -427,7 +550,38 @@ Table *load_file(void) {
         free(Filename);
         return table;
 }
+/*---------------------------------------------------------------------------*/
+Cursor *table_start(Table *tb) {
+        Cursor *cursor = malloc(sizeof(*cursor));
+        cursor->table = tb;
+        cursor->page_num=tb->root_page_num;
+        cursor->cell_num=0;
+        void *root_node=get_page(tb->page_mu,tb->root_page_num);
+        uint32_t num_cells=*leaf_node_num_cells(root_node);
+        cursor->EOT=(num_cells==0);
+        return cursor;
+}
 
+Cursor *table_end(Table *tb) {
+        Cursor *cursor = malloc(sizeof(*cursor));
+        cursor->table = tb;
+        cursor->page_num=tb->root_page_num;
+        cursor->EOT = true;
+        void *root_node=get_page(tb->page_mu,tb->root_page_num);
+        uint32_t num_cells=*leaf_node_num_cells(root_node);
+        cursor->cell_num=num_cells;
+        return cursor;
+}
+
+void cursor_advance(Cursor *cursor) {
+        uint32_t page_num=cursor->page_num;
+        void *node=get_page(cursor->table->page_mu,page_num);
+        ++cursor->cell_num;
+        if(cursor->cell_num >=(*leaf_node_num_cells(node))){
+                cursor->EOT=true;
+        }
+}
+/*---------------------------------------------------------------------------*/
 void logic_repl(Table *tb) {
         InputBuffer *input_buffer = new_input_buffer();
         while (true) {
@@ -476,28 +630,5 @@ void logic_repl(Table *tb) {
                         default:
                                 break;
                 }
-        }
-}
-
-Cursor *table_start(Table *tb) {
-        Cursor *cursor = malloc(sizeof(*cursor));
-        cursor->table = tb;
-        cursor->row_id = 0;
-        cursor->EOT = (tb->num_rows == 0);
-        return cursor;
-}
-
-Cursor *table_end(Table *tb) {
-        Cursor *cursor = malloc(sizeof(*cursor));
-        cursor->table = tb;
-        cursor->row_id = tb->num_rows;
-        cursor->EOT = true;
-        return cursor;
-}
-
-void cursor_advance(Cursor *cursor) {
-        ++cursor->row_id;
-        if (cursor->row_id >= cursor->table->num_rows) {
-                cursor->EOT = true;
         }
 }

@@ -1,0 +1,2 @@
+/usr/bin/llvm-ar qc ../lib/libdb_user.a  CMakeFiles/db_user.dir/compile.c.o
+/usr/bin/llvm-ranlib ../lib/libdb_user.a

@@ -14,7 +14,6 @@
 #include <stdint.h>
 #include <stdbool.h>
 #define uninitialized 0x3f3f3f3f
-#define EXIT_SUCC 0
 #define COLUMN_USERNAME_SIZE 32
 #define COLUMN_EMAIL_SIZE 255
 #define BUFFER_SIZE (4*1024)

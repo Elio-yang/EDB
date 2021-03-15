@@ -1,1 +1,0 @@
-/usr/bin/cc  -O0 -Wall -g -ggdb   CMakeFiles/database.dir/__main__.c.o  -o ../../bin/database ../../lib/libdb_lib.a ../../lib/libdb_core.a ../../lib/libdb_ui.a ../../lib/libdb_user.a ../../lib/libdb_debug.a 

@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libdb_ui.a  CMakeFiles/db_ui.dir/help.c.o CMakeFiles/db_ui.dir/terminal.c.o
-/usr/bin/ranlib ../../lib/libdb_ui.a

@@ -1,0 +1,1 @@
+/usr/bin/clang -Wall -std=c99  -O0 -Wall -g -ggdb   CMakeFiles/sqldb.dir/main.c.o  -o ../bin/sqldb  ../lib/libdb_lib.a ../lib/libdb_core.a ../lib/libdb_user.a ../lib/libdb_debug.a ../lib/libdb_lib.a 

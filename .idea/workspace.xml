@@ -15,7 +15,157 @@
     </configurations>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="" />
+    <list default="true" id="17507a8e-9570-4b3d-9378-fc817fb6a282" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/Image/leaf_node_layout.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Libs/b_tree.c" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Libs/b_tree.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/REPL.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/REPL.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/compile.c" beforeDir="false" afterPath="$PROJECT_DIR$/Core/compile.c" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Core/compile.h" beforeDir="false" afterPath="$PROJECT_DIR$/Core/compile.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Butterfly-logic_repl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Butterfly-main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/Calls-main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/ControlFlow-logic_repl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/ControlFlow-main.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Image/DeclarationFile-logic_repl.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Libs/defs.h" beforeDir="false" afterPath="$PROJECT_DIR$/Libs/defs.h" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/__main__.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Src/test_main.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Tests/test.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeCache.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.10.2/CMakeCCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.10.2/CMakeCXXCompiler.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_C.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.10.2/CMakeDetermineCompilerABI_CXX.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.10.2/CMakeSystem.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.10.2/CompilerIdC/CMakeCCompilerId.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.10.2/CompilerIdC/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.10.2/CompilerIdCXX/CMakeCXXCompilerId.cpp" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/3.10.2/CompilerIdCXX/a.out" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/CMakeOutput.log" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Makefile2" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/1" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/10" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/11" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/12" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/13" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/14" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/15" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/16" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/3" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/5" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/6" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/7" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/8" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/9" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/Progress/count.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/TargetDirectories.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/cmake.check_cache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.bin" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.c" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/feature_tests.cxx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/cmake_clean_target.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/copyright.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/database.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/db_core.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Core/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/cmake_clean_target.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/db_log.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/db_debug.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Debug/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/cmake_clean_target.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/file_sys.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/mm.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/db_lib.dir/string_db.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Libs/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/database.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/Src/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/cmake_clean_target.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/help.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/db_ui.dir/terminal.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/UI/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/CMakeDirectoryInformation.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/C.includecache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/DependInfo.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/build.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/cmake_clean.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/cmake_clean_target.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/depend.internal" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/depend.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/flags.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/link.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/parser.c.o" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/db_user.dir/progress.make" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/CMakeFiles/progress.marks" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/Makefile" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/User/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build/cmake_install.cmake" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libdb_core.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_core.a" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/lib/libdb_lib.a" beforeDir="false" afterPath="$PROJECT_DIR$/lib/libdb_lib.a" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +185,14 @@
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
   </component>
   <component name="MacroExpansionManager">
     <option name="directoryName" value="zwz96r8e" />
@@ -80,6 +238,11 @@
     </key>
   </component>
   <component name="RunManager" selected="CMake Application.sqldb">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="cb_test" type="CMakeRunConfiguration" factoryName="Application" PROGRAM_PARAMS="10" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="cb_test" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="cb_test">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
@@ -108,6 +271,11 @@
     <configuration name="sqldb" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="MY_DataBase" TARGET_NAME="sqldb" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="MY_DataBase" RUN_TARGET_NAME="sqldb">
       <method v="2">
         <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="GradleAppRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="com.jetbrains.cidr.cpp.gradle.execution.GradleNativeBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
       </method>
     </configuration>
     <list>
@@ -156,6 +324,8 @@
       <workItem from="1615117530347" duration="2698000" />
       <workItem from="1615120608343" duration="2360000" />
       <workItem from="1615134102155" duration="3238000" />
+      <workItem from="1615170628219" duration="14733000" />
+      <workItem from="1615217040386" duration="1319000" />
     </task>
     <servers />
   </component>
@@ -188,14 +358,14 @@
           <option name="timeStamp" value="4" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
-          <url>file://$PROJECT_DIR$/Src/__main__.txt</url>
-          <line>37</line>
-          <option name="timeStamp" value="38" />
+          <url>file://$PROJECT_DIR$/Src/_main.txt</url>
+          <line>133</line>
+          <option name="timeStamp" value="41" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="com.jetbrains.cidr.execution.debugger.OCBreakpointType">
           <url>file://$PROJECT_DIR$/Src/main.c</url>
-          <line>14</line>
-          <option name="timeStamp" value="39" />
+          <line>11</line>
+          <option name="timeStamp" value="43" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

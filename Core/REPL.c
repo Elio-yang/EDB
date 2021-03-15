@@ -60,8 +60,11 @@ void print_help(void)
         printf("Options:\n"
                 "  .open <filename>                     : open & load a .db file\n"
                 "  .exit                                : exits SQLdb\n"
+                "  .const                               : show related constants\n"
+                "  .tree                                : tree visualization\n"
                 "  select                               : show all rows\n"
-                "  insert <id> <username> <email>       : insert a row record\n");
+                "  insert <id> <username> <email>       : insert a row record\n"
+                );
 }
 void print_init(void)
 {

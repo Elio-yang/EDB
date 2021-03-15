@@ -1,2 +1,0 @@
-/usr/bin/ar qc ../../lib/libdb_debug.a  CMakeFiles/db_debug.dir/db_log.c.o
-/usr/bin/ranlib ../../lib/libdb_debug.a

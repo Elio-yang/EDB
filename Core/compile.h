@@ -26,9 +26,9 @@ typedef enum {
 } Prepare_result;
 
 /*
- *----------*----------*---------*
- |    id    | username |  email  |
- *----------*----------*---------*
+ *--------------*---------------*---------------*
+ |    id(4B)    | username(33B) |  email(256B)  |  size = 293B
+ *--------------*---------------*---------------*
  */
 typedef struct {
         uint32_t id;
@@ -54,6 +54,7 @@ typedef struct {
 typedef struct {
         int fd;
         uint32_t file_len;
+        uint32_t num_pages;
         /* all 'pages' stored in array */
         void *pages[TABLE_MAX_PAGE];
 } Page_pool;
@@ -61,18 +62,27 @@ typedef struct {
 typedef struct {
         /* page management unit */
         Page_pool *page_mu;
-        /* 有多少个row */
-        uint32_t num_rows;
+        uint32_t root_page_num;
 } Table;
 
 typedef struct {
         Table *table;
-        uint32_t row_id;
+        /* used to locate */
+        uint32_t page_num;
+        uint32_t cell_num;
         /*End Of Table*/
         bool EOT;
 }Cursor;
 
+uint32_t *leaf_node_num_cells(void *node);
 
+void *leaf_node_cell(void *node,uint32_t cell_num);
+
+uint32_t *leaf_node_key(void *node,uint32_t cell_num);
+
+uint32_t *leaf_node_value(void *node,uint32_t cell_num);
+
+void initialize_leaf_node(void *node);
 
 Meta_command_result do_meta_command(InputBuffer *in_buf, Table *tb);
 
@@ -100,7 +110,7 @@ Table *db_open(const char *filename);
 
 void db_close(Table *tb);
 
-void pager_flush(Page_pool *page_mu, uint32_t page_id, uint32_t size);
+void pager_flush(Page_pool *page_mu, uint32_t page_id);
 
 void *get_page(Page_pool *page_mu, uint32_t page_id);
 
